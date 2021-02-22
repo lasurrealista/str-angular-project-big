@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/material-dashboard.min.css",
               "src/styles.scss"
             ],
             "scripts": []
