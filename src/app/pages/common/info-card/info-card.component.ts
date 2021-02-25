@@ -5,7 +5,8 @@ icon:string
 cardClass:string
 title:string
 content:string
-footer:string}
+footer:string
+routerLink:string}
 
 @Component({
   selector: 'app-info-card',
@@ -18,6 +19,7 @@ export class InfoCardComponent implements OnInit {
   @Input() title:string="title"
   @Input() content:string=""
   @Input() footer:string=""
+  @Input() routerLink:string=""
 
 
   constructor() { }
