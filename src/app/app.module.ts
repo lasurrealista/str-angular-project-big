@@ -12,6 +12,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './pages/common/sidebar/sidebar.component';
 import { NavbarComponent } from './pages/common/navbar/navbar.component';
 import { InfoCardComponent } from './pages/common/info-card/info-card.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,13 +25,16 @@ import { InfoCardComponent } from './pages/common/info-card/info-card.component'
     DashboardComponent,
     SidebarComponent,
     NavbarComponent,
-    InfoCardComponent
+    InfoCardComponent,
+    ProductsComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-	  ToastrModule.forRoot()
+	  ToastrModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
