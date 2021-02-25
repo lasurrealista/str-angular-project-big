@@ -15,7 +15,7 @@ export interface ITableCol {
 })
 export class ConfigService {
 
-  apiUrl: string = 'http://localhost:3000/';
+  apiUrl: string = 'http://localhost:3000';
 
   productsTableColumns: ITableCol[] = [
     {
