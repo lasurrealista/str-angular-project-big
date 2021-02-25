@@ -61,6 +61,41 @@ export class ConfigService {
 
   ]
 
+  customersTableColumns: ITableCol[] = [
+    {
+      key: 'id',
+      title: '#',
+      visible: true,
+    },
+    {
+      key: 'firstName',
+      title: 'First name',
+      visible: true,
+    },
+    {
+      key: 'lastName',
+      title: 'Last name',
+      visible: true,
+    },
+    {
+      key: 'email',
+      title: 'E-mail',
+      visible: true,
+    },
+    {
+      key: 'address',
+      title: 'Address',
+      visible: true,
+    },
+    {
+      key: 'active',
+      title: 'Active',
+      visible: true,
+    }
+
+  ]
+
+
   constructor() {
   }
 }
