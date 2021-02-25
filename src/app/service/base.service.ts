@@ -42,4 +42,17 @@ export class BaseService<T extends { id: number}> {
       )
     )
   }
+
+  update(entity: T): Observable<T> {
+    return this.http.patch<T>(
+      `${this.config.apiUrl}/${this.entityName}/${entity.id}`,
+      entity);
+  }
+
+  remove(entity: T): Observable<T> {
+    return this.http.delete<T>(
+      `${this.config.apiUrl}/${this.entityName}/${entity.id}`,
+    );
+  }
+
 }
