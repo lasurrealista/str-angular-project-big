@@ -94,4 +94,9 @@ export class ProductsComponent implements OnInit {
     this.pageStart = (this.currentPage - 5) < 1 ? 1 : (this.currentPage - 5);
   }
 
+  columnKey: string = '';
+
+  onColumnSelect(key: string): void {
+    this.columnKey = key;
+  }
 }
