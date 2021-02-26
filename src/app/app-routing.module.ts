@@ -18,6 +18,8 @@ const routes: Routes = [
     path: 'products',
     component: ProductsComponent,
   },
+  { path: 'products/:id',
+  component:EditProductComponent},
   {
     path: 'customers',
     component: CustomersComponent,
