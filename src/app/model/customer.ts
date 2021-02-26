@@ -7,4 +7,8 @@ export class Customer {
     email: string = '';
     address: Address = new Address;
     active: boolean = false;
+
+    [param: string]: any;
+
+    
 }
