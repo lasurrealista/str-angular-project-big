@@ -19,7 +19,32 @@
                 <td>{{customer.email}} </td>
                 <td>{{customer.address}} </td>
                 <td>{{customer.active}} </td>
+                <td>
+                  <button [routerLink]="[customer.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
+                </td>
+                <td>
+                  <button (click)="onDelete(customer)" class="btn btn-danger px-3"><i
+                      class="fa fa-trash"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>
  </div>
+
+ <div class="row">
+  <div class="col-12">
+    <nav class="d-flex justify-content-center">
+      <ul class="pagination text-center">
+        <li class="page-item">
+          <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a></li>
+        <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+          <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+            {{ btn.page }}
+          </a>
+        </li>
+        <li class="page-item">
+          <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
