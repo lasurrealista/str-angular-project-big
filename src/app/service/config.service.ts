@@ -62,6 +62,11 @@ export class ConfigService {
       key: 'edit',
       title: 'Edit',
       visible: true,
+    },
+    {
+      key: 'delete',
+      title: 'Delete',
+      visible: true,
     }
 
   ]
