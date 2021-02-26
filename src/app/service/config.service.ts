@@ -124,6 +124,30 @@ export class ConfigService {
 
   ];
 
+  billsTableColumns: ITableCol[] = [
+    {
+      key: 'id',
+      title: '#',
+      visible: true,
+    },
+    {
+      key: 'orderID',
+      title: 'Order Id',
+      visible: true,
+    },
+    {
+      key: 'amount',
+      title: 'Amount',
+      visible: true,
+    },
+    {
+      key: 'status',
+      title: 'Status',
+      visible: true,
+    }
+
+  ];
+
   constructor() {
   }
 }
