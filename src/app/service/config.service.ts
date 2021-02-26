@@ -15,7 +15,7 @@ export interface ITableCol {
 })
 export class ConfigService {
 
-  apiUrl: string = 'http://localhost:3000/';
+  apiUrl: string = 'http://localhost:3000';
 
   productsTableColumns: ITableCol[] = [
     {
@@ -56,6 +56,11 @@ export class ConfigService {
     {
       key: 'active',
       title: 'Active',
+      visible: true,
+    },
+    {
+      key: 'edit',
+      title: 'Edit',
       visible: true,
     }
 
