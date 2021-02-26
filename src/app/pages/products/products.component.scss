@@ -30,7 +30,6 @@
   }
   &:focus {
     border-color: $border-color;
-    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
     box-shadow: 0 0 1px 3px $orange;
     color: $background-color;
     outline: none;
