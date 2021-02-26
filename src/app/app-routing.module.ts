@@ -4,6 +4,7 @@ import { BillsComponent } from './pages/bills/bills.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EditBillComponent } from './pages/edit-bill/edit-bill.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductsComponent } from './pages/products/products.component';
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'bills',
     component: BillsComponent,
+  },
+  {
+    path: 'bills/:id',
+    component: EditBillComponent,
   },
   {
     path: 'categories',
