@@ -17,6 +17,9 @@ import { EditProductComponent } from './pages/edit-product/edit-product.componen
 
 import { FormsModule } from '@angular/forms';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { BillsComponent } from './pages/bills/bills.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { CustomersComponent } from './pages/customers/customers.component';
     InfoCardComponent,
     ProductsComponent,
     EditProductComponent,
-    CustomersComponent
+    CustomersComponent,
+    BillsComponent,
+    OrdersComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
