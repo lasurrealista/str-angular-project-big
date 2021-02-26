@@ -17,8 +17,13 @@ interface IPageBtn {
 })
 export class CustomersComponent implements OnInit {
 
-  customers$: Observable<Customer[]> = this.customerService.list$;
   cols: ITableCol[] = this.config.customersTableColumns;
+  customers$: Observable<Customer[]> = this.customerService.list$.pipe(
+    tap( customers => this.customersProperties.count = customers.length )
+  );
+
+  filterKey: string = '';
+  filterKeys: string[] = Object.keys(new Customer());
 
   constructor(
     private customerService: CustomerService,
