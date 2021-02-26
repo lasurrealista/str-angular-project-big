@@ -17,6 +17,7 @@
         <td>{{product.price}} </td>
         <td>{{product.featured}} </td>
         <td>{{product.active}} </td>
+        <td [routerLink]="[product.id]" class="material-icons">edit</td>
       </tr>
     </tbody>
   </table>
