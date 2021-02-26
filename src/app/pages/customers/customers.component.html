@@ -1,25 +1,86 @@
-
 <div class="container-fluid p-4">
-  <div class="card">
-    <div class="card-header card-header-success">
-      <h4 class="card-title">List of Customers</h4>
-    </div>
- <div class="card-content table-responsive table-full-width">
-   <table class="table">
-        <thead class="text-success">
-            <tr>
-                <th *ngFor="let col of cols">{{ col.title }}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let customer of customers$ | async">
-                <td class="text-success">{{customer.id}}</td>
-                <td>{{customer.firstName}}</td>
-                <td>{{customer.lastName}}</td>
-                <td>{{customer.email}} </td>
-                <td>{{customer.address}} </td>
-                <td>{{customer.active}} </td>
-            </tr>
-        </tbody>
-    </table>
- </div>
+
+  <div class="col-12">
+    <div class="form-inline mt-4 border-0">
+      <select [(ngModel)]="filterKey" class="form-control select-css">
+        <option [hidden]="key === 'image'" *ngFor="let key of filterKeys" [value]="key">
+          <span *ngIf="key !== 'image'">{{ key }}</span>
+        </option>
+      </select>
+      <div class="col-12 mt-4">
+        <form class="form-inline my-2 my-lg-0 py-2 d-flex justify-content-center">
+          <input (keyup)="searchEvent($event)" class="search-input form-control mr-sm-2" type="text"
+            placeholder="Search">
+          <button class="btn btn-search my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <div class="row mt-4">
+          <div class="col-12">
+            <nav class="d-flex justify-content-center">
+              <ul class="pagination text-center">
+                <li class="page-item">
+                  <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a></li>
+                <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                  <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+                    {{ btn.page }}
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-header-success">
+              <h4 class="card-title">List of Customers</h4>
+            </div>
+            <div class="card-content table-responsive table-full-width">
+              <table class="table">
+                <thead class="text-success">
+                  <tr>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">{{ col.title }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let customer of customers$ | async | filter: filterKey:phrase:customersProperties | slice:pageSliceStart:pageSliceEnd | sorter:columnKey">
+                    <td class="text-success">{{customer.id}}</td>
+                    <td>{{customer.firstName}}</td>
+                    <td>{{customer.lastName}}</td>
+                    <td>{{customer.email}} </td>
+                    <td>{{customer.address.street}}, {{customer.address.zip}} {{customer.address.city}},
+                      {{customer.address.country}} <br> <span class="font-italic">({{customer.address.notes}})</span>
+                    </td>
+                    <td>{{customer.active}} </td>
+                    <td>
+                      <button [routerLink]="[customer.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
+                    </td>
+                    <td>
+                      <button (click)="onDelete(customer)" class="btn btn-danger px-3"><i
+                          class="fa fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <nav class="d-flex justify-content-center">
+                  <ul class="pagination text-center">
+                    <li class="page-item">
+                      <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a></li>
+                    <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                      <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+                        {{ btn.page }}
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
