@@ -47,7 +47,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onDelete(product: Product): void {
-    this.productService.remove(product);
+    this.productService.remove(product)
   }
 
   showHtmlToasterDelete(){
