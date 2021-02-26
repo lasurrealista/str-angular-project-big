@@ -121,6 +121,16 @@ export class ConfigService {
       title: 'Status',
       visible: true,
     },
+    {
+      key: 'edit',
+      title: 'Edit',
+      visible: true,
+    },
+    {
+      key: 'delete',
+      title: 'Delete',
+      visible: true,
+    }
 
   ];
 
