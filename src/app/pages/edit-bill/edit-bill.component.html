@@ -2,7 +2,7 @@
     <!--    a *ngIf miatt, a div addig nem latszik amig az bill$ nem all rendelkezesre  -->
     <div *ngIf="(bill$ | async) as event" class="col-6 offset-3">
         <div class="offset-4 m-5">
-            <h1>Product details</h1>
+            <h1>Bill details</h1>
         </div>
         <!-- egy lokalis valtozoba tesszuk, az angular altal letrehozott ngForm-ot -->
         <form #eventForm="ngForm" (ngSubmit)="onFormSubmit(eventForm)">
@@ -17,7 +17,7 @@
                 <input [(ngModel)]="event.orderID" class="form-control" name="orderID" type="text" required>
                 <!-- rejtett a div addig amig a name input mezo valid -->
                 <div [hidden]="eventForm.controls.name?.valid" class="error-message">
-                    May be minimum 2 maximum 10 Characters
+                    May be minimum 5 maximum 8 numbers
                 </div>
             </div>
 
