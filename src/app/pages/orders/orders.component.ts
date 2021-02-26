@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from 'src/app/model/product';
+import { Order } from 'src/app/model/order';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
-import { ProductService } from 'src/app/service/product.service';
+import { OrderService } from 'src/app/service/order.service';
 import { NotificationService } from 'src/app/service/notification.service';
 import { tap } from 'rxjs/operators';
 
@@ -11,43 +11,43 @@ interface IPageBtn {
 }
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  selector: 'app-orders',
+  templateUrl: './orders.component.html',
+  styleUrls: ['./orders.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class OrdersComponent implements OnInit {
 
-  cols: ITableCol[] = this.config.productsTableColumns;
-  products$: Observable<Product[]> = this.productService.list$.pipe(
-    tap( products => this.productsProperties.count = products.length )
+  cols: ITableCol[] = this.config.ordersTableColumns;
+  orders$: Observable<Order[]> = this.orderService.list$.pipe(
+    tap( orders=> this.ordersProperties.count = orders.length )
   );
 
   filterKey: string = '';
-  filterKeys: string[] = Object.keys(new Product());
+  filterKeys: string[] = Object.keys(new Order());
 
   constructor(
     private config: ConfigService,
-    private productService: ProductService,
+    private orderService: OrderService,
     private notifyService : NotificationService,
   ) { }
 
   ngOnInit(): void {
-    this.productService.getAll();
+    this.orderService.getAll();
   }
 
-  product: Product = new Product();
+  order: Order = new Order();
 
-  onUpdate(product: Product): void {
+  onUpdate(order: Order): void {
 
-    if (product.id === 0) {
-      this.productService.create(product);
+    if (order.id === 0) {
+      this.orderService.create(order);
     }
 
-    this.productService.update(product);
+    this.orderService.update(order);
   }
 
-  onDelete(product: Product): void {
-    this.productService.remove(product)
+  onDelete(order: Order): void {
+    this.orderService.remove(order)
   }
 
   showHtmlToasterDelete(){
@@ -60,7 +60,7 @@ export class ProductsComponent implements OnInit {
     this.phrase = (event.target as HTMLInputElement).value;
   }
 
-  productsProperties: {count: number} = {
+  ordersProperties: {count: number} = {
     count: 0,
   };
   pageSize: number = 20;
@@ -68,7 +68,7 @@ export class ProductsComponent implements OnInit {
   currentPage: number = 1;
   get paginator(): IPageBtn[] {
     const pages: IPageBtn[] = [];
-    for (let i = 0; i < this.productsProperties.count / this.pageSize && pages.length < 10; i++ ) {
+    for (let i = 0; i < this.ordersProperties.count / this.pageSize && pages.length < 10; i++ ) {
       const page = this.pageStart + i;
       pages.push({page});
     }

@@ -16,6 +16,10 @@ import { ProductsComponent } from './pages/products/products.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
 
 import { FormsModule } from '@angular/forms';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { BillsComponent } from './pages/bills/bills.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     InfoCardComponent,
     ProductsComponent,
-    EditProductComponent
+    EditProductComponent,
+    CustomersComponent,
+    BillsComponent,
+    OrdersComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

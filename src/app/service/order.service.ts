@@ -1,22 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Customer } from '../model/customer';
+import { Order } from '../model/order';
 import { BaseService } from './base.service';
 import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
+export class OrderService extends BaseService<Order>{
 
-export class CustomerService extends BaseService<Customer> {
+  list$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
-  list$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
-  
   constructor(
     public config: ConfigService,
     public http: HttpClient,
   ) {
-    super(http, config, 'customer');
+    super(http, config, 'orders');
   }
 }

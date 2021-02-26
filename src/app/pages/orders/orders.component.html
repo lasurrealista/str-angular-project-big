@@ -1,45 +1,8 @@
 <div class="container-fluid p-4">
 
-<<<<<<< HEAD
-    <h1 class="text-center h2 mt-4">List of Products</h1>
-    <table class="table table-striped table-dark table-responsive-sm mt-4">
-        <thead>
-            <tr>
-                <th *ngFor="let col of cols">{{ col.title }}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products$ | async">
-                <td>{{product.id}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.type}}</td>
-                <td>{{product.catID}} </td>
-                <td>{{product.description}} </td>
-                <td>{{product.price}} </td>
-                <td>{{product.featured}} </td>
-                <td>{{product.active}} </td>
-                <td>
-                    <div class="btn-group">
-                        <!-- kattintasra az adott id-ju elem linkjere ugrik (routerLink megadas) -->
-                        <button [routerLink]="[product.id]" class="btn btn-info">
-                 <i class="fa fa-edit"></i>
-            </button>
-                        <button [routerLink]="[product.id]" class="btn btn-info">
-                <span class="material-icons">
-                  delete_forever
-                  </span>
-            </button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
-=======
   <div class="form-group d-flex justify-content-center my-4">
-    <button (click)="onUpdate(product)" [routerLink]="'products/0'" class="btn btn-success">Add new
-      product</button>
+    <button (click)="onUpdate(order)" [routerLink]="'orders/0'" class="btn btn-success">Add new
+      order</button>
   </div>
 
   <div class="col-12">
@@ -76,33 +39,30 @@
 
         <div class="col-12">
           <div class="card">
-            <div class="card-header card-header-warning">
-              <h4 class="card-title">List of Products</h4>
+            <div class="card-header card-header-info">
+              <h4 class="card-title">List of orders</h4>
             </div>
             <div class="card-content table-responsive">
               <table class="table">
-                <thead class="text-warning">
+                <thead class="text-info">
                   <tr>
                     <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">{{ col.title }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let product of products$ | async | filter: filterKey:phrase:productsProperties | slice:pageSliceStart:pageSliceEnd | sorter:columnKey">
-                    <td class=" text-warning">{{product.id}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.type}}</td>
-                    <td>{{product.catID}} </td>
-                    <td>{{product.description}} </td>
-                    <td>{{product.price}} </td>
-                    <td>{{product.featured}} </td>
-                    <td>{{product.active}} </td>
+                    *ngFor="let order of orders$ | async | filter: filterKey:phrase:ordersProperties | slice:pageSliceStart:pageSliceEnd | sorter:columnKey">
+                    <td class=" text-info">{{order.id}}</td>
+                    <td>{{order.customerID}}</td>
+                    <td>{{order.productID}}</td>
+                    <td>{{order.amount}} </td>
+                    <td>{{order.status}} </td>
                     <td>
-                      <button [routerLink]="[product.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
+                      <button [routerLink]="[order.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
                     </td>
                     <td>
-                      <button (click)="onDelete(product)" (click)="showHtmlToasterDelete()"
-                        class="btn btn-danger px-3"><i class="fa fa-trash"></i></button>
+                      <button (click)="onDelete(order)" (click)="showHtmlToasterDelete()" class="btn btn-danger px-3"><i
+                          class="fa fa-trash"></i></button>
                     </td>
                   </tr>
                 </tbody>
@@ -128,4 +88,3 @@
             </nav>
           </div>
         </div>
->>>>>>> Evelin

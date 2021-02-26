@@ -10,6 +10,8 @@ export class Product extends Category {
     featured: boolean = false;
     active: boolean = true;
 
+    [param: string]: any;
+
     constructor(properties?: Product) {
       super();
       if (properties) {

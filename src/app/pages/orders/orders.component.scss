@@ -30,8 +30,7 @@
   }
   &:focus {
     border-color: $border-color;
-    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
-    box-shadow: 0 0 1px 3px $orange;
+    box-shadow: 0 0 1px 3px $light-blue;
     color: $background-color;
     outline: none;
   }
@@ -43,7 +42,7 @@
 
     & li a.page-link{
       color: $primary-color;
-      background: $orange;
+      background: $light-blue;
       font-size: 16px;
       font-weight: 500;
       line-height: 37px;
@@ -77,7 +76,7 @@
 .pagination li.active a.page-link:hover,
 .pagination li.active a.page-link{
     color: $primary-color;
-    background:  $orange;
+    background:  $light-blue;
     box-shadow: 3px 3px 0 $box-shadow;
 }
 
@@ -104,7 +103,7 @@
   &:focus {
     border-color: $border-color;
     border-radius: 5px;
-    box-shadow: 0 0 1px 3px $orange;
+    box-shadow: 0 0 1px 3px $light-blue;
     color: $background-color;
     outline: none;
   }
