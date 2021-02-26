@@ -58,11 +58,11 @@
                     <td>{{order.amount}} </td>
                     <td>{{order.status}} </td>
                     <td>
-                      <button [routerLink]="[order.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
-                    </td>
-                    <td>
-                      <button (click)="onDelete(order)" (click)="showHtmlToasterDelete()" class="btn btn-danger px-3"><i
-                          class="fa fa-trash"></i></button>
+                      <div class="btn-group">
+                        <button [routerLink]="[order.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
+                        <button (click)="onDelete(order)" (click)="showHtmlToasterDelete()"
+                          class="btn btn-danger px-3"><i class="fa fa-trash"></i></button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
