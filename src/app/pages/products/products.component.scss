@@ -109,3 +109,11 @@
     outline: none;
   }
 }
+
+thead {
+  th {
+    &:hover {
+      cursor: pointer
+      }
+    }
+  }
