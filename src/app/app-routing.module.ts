@@ -34,10 +34,6 @@ const routes: Routes = [
     component: EditCustomerComponent,
   },
   {
-    path: 'products/:id',
-    component: EditProductComponent,
-  },
-  {
     path: 'orders',
     component: OrdersComponent,
   },

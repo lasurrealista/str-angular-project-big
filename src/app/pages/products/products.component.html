@@ -1,42 +1,5 @@
 <div class="container-fluid p-4">
 
-<<<<<<< HEAD
-    <h1 class="text-center h2 mt-4">List of Products</h1>
-    <table class="table table-striped table-dark table-responsive-sm mt-4">
-        <thead>
-            <tr>
-                <th *ngFor="let col of cols">{{ col.title }}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products$ | async">
-                <td>{{product.id}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.type}}</td>
-                <td>{{product.catID}} </td>
-                <td>{{product.description}} </td>
-                <td>{{product.price}} </td>
-                <td>{{product.featured}} </td>
-                <td>{{product.active}} </td>
-                <td>
-                    <div class="btn-group">
-                        <!-- kattintasra az adott id-ju elem linkjere ugrik (routerLink megadas) -->
-                        <button [routerLink]="[product.id]" class="btn btn-info">
-                 <i class="fa fa-edit"></i>
-            </button>
-                        <button [routerLink]="[product.id]" class="btn btn-info">
-                <span class="material-icons">
-                  delete_forever
-                  </span>
-            </button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
-=======
   <div class="form-group d-flex justify-content-center my-4">
     <button (click)="onUpdate(product)" [routerLink]="'products/0'" class="btn btn-success">Add new
       product</button>
@@ -129,4 +92,3 @@
             </nav>
           </div>
         </div>
->>>>>>> Evelin
