@@ -1,0 +1,55 @@
+<div class="row">
+    <div *ngIf="(customer$ | async) as event" class="col-6 offset-3">
+        <div class="offset-4 m-5">
+            <h1>Customer details</h1>
+        </div>
+
+        <form #eventForm="ngForm" (ngSubmit)="onFormSubmit(eventForm)">
+
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input [(ngModel)]="event.id" class="form-control" name="id" type="text" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="firstName">* firstName</label>
+                <input [(ngModel)]="event.firstName" class="form-control" name="firstName" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">* lastName</label>
+                <input [(ngModel)]="event.lastName" class="form-control" name="lastName" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">* e-mail</label>
+                <input [(ngModel)]="event.email" class="form-control" name="email" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">* address</label>
+                <input [(ngModel)]="event.address" class="form-control" name="address" type="text" required>
+            </div>
+
+
+            <pre>
+              <small>* required </small>
+            </pre>
+
+            <div class="form-group offset-3">
+
+                <button type="reset" class="btn btn-secondary  mt-5 mr-5 cancelBtn"><a routerLink="/products"> <i class="fa fa-refresh "></i></a> </button>
+
+                <!-- disabled a gomb amig a form invalid -->
+                <button [disabled]="eventForm.invalid || updating" class="btn btn-success  mt-5" type="submit">
+             <i *ngIf="!updating" class="fa fa-save"></i>
+              <i *ngIf="updating" class="fa fa-refresh"></i>
+            </button>
+            </div>
+            <!-- teszteleshez -->
+            <!--           <pre>
+          {{event | json}}
+       </pre> -->
+
+        </form>
+    </div>
+</div>
