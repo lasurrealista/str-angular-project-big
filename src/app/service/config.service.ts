@@ -58,16 +58,6 @@ export class ConfigService {
       title: 'Active',
       visible: true,
     },
-    {
-      key: 'edit',
-      title: 'Edit',
-      visible: true,
-    },
-    {
-      key: 'delete',
-      title: 'Delete',
-      visible: true,
-    }
 
   ]
 
@@ -101,16 +91,6 @@ export class ConfigService {
       key: 'active',
       title: 'Active',
       visible: true,
-    },
-    {
-      key: 'edit',
-      title: 'Edit',
-      visible: true,
-    },
-    {
-      key: 'delete',
-      title: 'Delete',
-      visible: true,
     }
 
   ];
@@ -129,6 +109,30 @@ export class ConfigService {
     {
       key: 'productID',
       title: 'Product Id',
+      visible: true,
+    },
+    {
+      key: 'amount',
+      title: 'Amount',
+      visible: true,
+    },
+    {
+      key: 'status',
+      title: 'Status',
+      visible: true,
+    }
+
+  ];
+
+  billsTableColumns: ITableCol[] = [
+    {
+      key: 'id',
+      title: '#',
+      visible: true,
+    },
+    {
+      key: 'orderID',
+      title: 'Order Id',
       visible: true,
     },
     {

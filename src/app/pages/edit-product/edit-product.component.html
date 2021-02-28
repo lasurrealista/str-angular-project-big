@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div *ngIf="(product$ | async) as product" class="col-6 offset-3">
     <form #editForm="ngForm" (ngSubmit)="onUpdate(editForm, product)">
       <div *ngFor="let field of fields" class="form-group">
@@ -17,4 +17,75 @@
       </button>
     </form>
   </div>
+</div> -->
+<div class="row">
+    <!--    a *ngIf miatt, a div addig nem latszik amig az bill$ nem all rendelkezesre  -->
+    <div *ngIf="(product$ | async) as event" class="col-6 offset-3">
+        <div class="offset-4 m-5">
+            <h1>Product details</h1>
+        </div>
+        <!-- egy lokalis valtozoba tesszuk, az angular altal letrehozott ngForm-ot -->
+        <form #eventForm="ngForm" (ngSubmit)="onFormSubmit(eventForm)">
+
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input [(ngModel)]="event.id" class="form-control" name="id" type="text" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="name">* Name</label>
+                <input [(ngModel)]="event.name" class="form-control" name="name" type="text" required>
+                <!-- rejtett a div addig amig a name input mezo valid -->
+                <div [hidden]="eventForm.controls.name?.valid" class="error-message">
+                    May be minimum 2 maximum 10 Characters
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="type">* type</label>
+                <input [(ngModel)]="event.type" class="form-control" name="type" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="catID">* catID</label>
+                <input [(ngModel)]="event.catID" class="form-control" name="catID" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="description">* description</label>
+                <input [(ngModel)]="event.description" class="form-control" name="description" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="price">* price</label>
+                <input [(ngModel)]="event.price" class="form-control" name="price" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="featured">* featured</label>
+                <input [(ngModel)]="event.featured" class="form-control" name="featured" type="text" required>
+            </div>
+            <div class="form-group">
+                <label for="active">* active</label>
+                <input [(ngModel)]="event.active" class="form-control" name="active" type="text" required>
+            </div>
+
+            <pre>
+            <small>* required </small>
+          </pre>
+
+            <div class="form-group offset-3">
+
+                <button type="reset" class="btn btn-secondary  mt-5 mr-5 cancelBtn"><a routerLink="/products"> <i class="fa fa-refresh "></i></a> </button>
+
+                <!-- disabled a gomb amig a form invalid -->
+                <button [disabled]="eventForm.invalid || updating" class="btn btn-success  mt-5" type="submit">
+               <i *ngIf="!updating" class="fa fa-save"></i>
+                <i *ngIf="updating" class="fa fa-refresh"></i>
+              </button>
+            </div>
+            <!-- teszteleshez -->
+            <!--           <pre>
+            {{event | json}}
+         </pre> -->
+
+        </form>
+    </div>
 </div>

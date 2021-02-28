@@ -4,6 +4,8 @@ import { BillsComponent } from './pages/bills/bills.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EditBillComponent } from './pages/edit-bill/edit-bill.component';
+import { EditCustomerComponent } from './pages/edit-customer/edit-customer.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductsComponent } from './pages/products/products.component';
@@ -28,8 +30,8 @@ const routes: Routes = [
     component: CustomersComponent,
   },
   {
-    path: 'edit-product',
-    component: EditProductComponent,
+    path: 'customers/:id',
+    component: EditCustomerComponent,
   },
   {
     path: 'orders',
@@ -38,6 +40,10 @@ const routes: Routes = [
   {
     path: 'bills',
     component: BillsComponent,
+  },
+  {
+    path: 'bills/:id',
+    component: EditBillComponent,
   },
   {
     path: 'categories',
