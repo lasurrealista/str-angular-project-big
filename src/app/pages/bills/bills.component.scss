@@ -105,7 +105,7 @@
 }
 
 thead {
-    th {
+    th:first-child, th:nth-child(2), th:nth-child(3), th:nth-child(4) {
         &:hover {
             cursor: pointer
         }
