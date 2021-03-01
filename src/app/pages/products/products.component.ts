@@ -5,6 +5,7 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
 import { NotificationService } from 'src/app/service/notification.service';
 import { tap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface IPageBtn {
   page: number;
@@ -29,6 +30,8 @@ export class ProductsComponent implements OnInit {
     private config: ConfigService,
     private productService: ProductService,
     private notifyService : NotificationService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +50,9 @@ export class ProductsComponent implements OnInit {
   }
 
   onDelete(product: Product): void {
-    this.productService.remove(product)
+    this.productService.remove(product).subscribe(
+      () => this.productService.getAll()
+    )
   }
 
   showHtmlToasterDelete(){
@@ -99,4 +104,6 @@ export class ProductsComponent implements OnInit {
   onColumnSelect(key: string): void {
     this.columnKey = key;
   }
+
+
 }

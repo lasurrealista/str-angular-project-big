@@ -47,7 +47,9 @@ export class BillsComponent implements OnInit {
  }
 
  onDelete(bill: Bill): void {
-   this.billService.remove(bill)
+   this.billService.remove(bill).subscribe(
+    () => this.billService.getAll()
+  )
  }
 
  showHtmlToasterDelete(){
