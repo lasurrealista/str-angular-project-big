@@ -35,7 +35,7 @@ export class EditBillComponent implements OnInit {
   ngOnInit(): void {
     this.billService.getAll();
     this.activatedRoute.params.subscribe(
-      params => this.Bill$ = this.billService.get(params.IDorName)
+      params => this.Bill$ = this.billService.get(params.id)
     )
   }
 

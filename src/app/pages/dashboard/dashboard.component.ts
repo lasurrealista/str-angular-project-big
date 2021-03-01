@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
     {title:'Products', content:'102', cardClass:'card-header-warning', footer:'footer 1', icon:'directions_car', routerLink:'/products'},
     {title:'Customers', content:'321', cardClass:'card-header-success', footer:'footer 2', icon:'person', routerLink:'/customers'},
     {title:'Orders', content:'202', cardClass:'card-header-danger', footer:'footer 3', icon:'shopping_cart', routerLink:'/orders'},
-    {title:'Addresses', content:'321', cardClass:'card-header-info', footer:'footer 4', icon:'language', routerLink:'/addresses'}
+    {title:'Bills', content:'321', cardClass:'card-header-info', footer:'footer 4', icon:'receipt', routerLink:'/bills'}
   ]
 
   constructor() { }
