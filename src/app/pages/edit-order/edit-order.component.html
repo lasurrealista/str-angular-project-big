@@ -55,7 +55,8 @@
         <button type="reset" class="btn btn-secondary cancelBtn ml-5"><a routerLink="/products"> <i
               class="fa fa-refresh "></i></a> </button>
 
-        <button [disabled]="orderForm.invalid || updating" class="btn btn-success mr-5" type="submit">
+        <button (click)="showHtmlToasterUpdate()" [disabled]="orderForm.invalid || updating"
+          class="btn btn-success mr-5" type="submit">
           <i *ngIf="!updating" class="fa fa-save"></i>
           <i *ngIf="updating" class="fa fa-refresh"></i>
         </button>

@@ -6,6 +6,7 @@ import { Customer } from 'src/app/model/customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { NgForm } from '@angular/forms';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-edit-customer',
@@ -30,6 +31,7 @@ export class EditCustomerComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private configService: ConfigService,
     private router: Router,
+    private notifyService: NotificationService,
 
   ) { }
 
@@ -38,6 +40,10 @@ export class EditCustomerComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params => this.Customer$ = this.customerService.get(params.IDorName)
     )
+  }
+
+  showHtmlToasterUpdate(){
+    this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
   }
 
   onFormSubmit(form: NgForm): void{

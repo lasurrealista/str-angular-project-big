@@ -6,6 +6,7 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { OrderService } from 'src/app/service/order.service';
 import { NgForm } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-edit-order',
@@ -30,6 +31,7 @@ export class EditOrderComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private configService: ConfigService,
     private router: Router,
+    private notifyService: NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -39,6 +41,9 @@ export class EditOrderComponent implements OnInit {
     )
   }
 
+  showHtmlToasterUpdate(){
+    this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
+  }
 
   onFormSubmit(form: NgForm): void{
     this.orderService.update(form.value);

@@ -6,7 +6,7 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
 import { NgForm } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
-
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-edit-product',
@@ -32,6 +32,7 @@ export class EditProductComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private configService: ConfigService,
     private router: Router,
+    private notifyService: NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +42,9 @@ export class EditProductComponent implements OnInit {
     )
   }
 
+  showHtmlToasterUpdate(){
+    this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
+  }
 
   onFormSubmit(form: NgForm): void{
     this.productService.update(form.value);
