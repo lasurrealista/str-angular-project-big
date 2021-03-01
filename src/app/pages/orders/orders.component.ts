@@ -47,7 +47,9 @@ export class OrdersComponent implements OnInit {
   }
 
   onDelete(order: Order): void {
-    this.orderService.remove(order)
+    this.orderService.remove(order).subscribe(
+      () => this.orderService.getAll()
+    )
   }
 
   showHtmlToasterDelete(){
