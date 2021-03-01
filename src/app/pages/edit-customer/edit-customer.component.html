@@ -14,6 +14,8 @@
           <div class="form-group">
             <label for="firstName">* firstName</label>
             <input [(ngModel)]="customer.firstName" class="form-control" name="firstName" type="text" required>
+            <!-- #customerFirstName="ngModel">
+            <div [hidden]="customerFirstName.valid">invaild name</div>    -->
           </div>
         </div>
         <div class="col-md-4">
