@@ -6,6 +6,7 @@ import { ConfigService, ITableCol } from 'src/app/service/config.service';
 import { BillService } from 'src/app/service/bill.service';
 import { NgForm } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
+import { NotificationService } from 'src/app/service/notification.service';
 
 @Component({
   selector: 'app-edit-bill',
@@ -22,14 +23,14 @@ export class EditBillComponent implements OnInit {
   updating : boolean = false;
   Bill$: Observable<Bill | undefined> = of(new Bill() );
 
-  Bill: Bill = new Bill();
-
+  bill: Bill = new Bill();
 
   constructor(
     private billService: BillService,
     private activatedRoute: ActivatedRoute,
     private configService: ConfigService,
     private router: Router,
+    private notifyService : NotificationService,
   ) { }
 
   ngOnInit(): void {
@@ -39,11 +40,16 @@ export class EditBillComponent implements OnInit {
     )
   }
 
-
-  onFormSubmit(form: NgForm): void{
-    this.billService.update(form.value);
-    console.log(form.value);
-
-    this.router.navigate(['bills']);
+  showHtmlToasterUpdate(){
+    this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
   }
+
+  onUpdate(form: NgForm, bill: Bill): void {
+
+    this.billService.update(bill).subscribe(
+      () => this.router.navigate(['bills'])
+    )
 }
+
+}
+
