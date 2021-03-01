@@ -65,8 +65,9 @@
 
       <div class="btn-group d-flex justify-content-center">
 
-        <button type="reset" class="btn btn-secondary ml-5 cancelBtn"><a routerLink="/products"> <i
-              class="fa fa-refresh "></i></a> </button>
+        <button type="reset" class="btn btn-secondary ml-5 cancelBtn">
+          <a routerLink="/customers"><i class="fa fa-refresh "></i></a>
+        </button>
 
         <!-- disabled a gomb amig a form invalid -->
         <button (click)="showHtmlToasterUpdate()" [disabled]="customerForm.invalid || updating"
