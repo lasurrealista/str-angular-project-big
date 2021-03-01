@@ -105,5 +105,14 @@ export class ProductsComponent implements OnInit {
     this.columnKey = key;
   }
 
-
+  /*
+  onSort(key: string): void {
+    if (key === this.sorterKey) {
+      this.sorterDirection = this.sorterDirection * -1;
+    } else {
+      this.sorterDirection = 1;
+    }
+    this.sorterKey = key;
+  }
+  */
 }
