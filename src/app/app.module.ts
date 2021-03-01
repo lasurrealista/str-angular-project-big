@@ -22,6 +22,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { EditBillComponent } from './pages/edit-bill/edit-bill.component';
 import { EditCustomerComponent } from './pages/edit-customer/edit-customer.component';
+import { EditOrderComponent } from './pages/edit-order/edit-order.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EditCustomerComponent } from './pages/edit-customer/edit-customer.compo
     OrdersComponent,
     CategoriesComponent,
     EditBillComponent,
-    EditCustomerComponent
+    EditCustomerComponent,
+    EditOrderComponent
   ],
   imports: [
     BrowserModule,
