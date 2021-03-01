@@ -4,7 +4,7 @@
       <h1 class="h2 text-center">Order details</h1>
     </div>
 
-    <form #orderForm="ngForm" (ngSubmit)="onFormSubmit(orderForm)">
+    <form #orderForm="ngForm" (ngSubmit)="onUpdate(orderForm, order)">
 
       <div class="form-group">
         <label for="id">ID</label>

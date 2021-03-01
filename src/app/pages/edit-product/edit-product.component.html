@@ -24,7 +24,7 @@
     <div class="offset-4 m-5">
       <h1 class="h2 text-center">Product details</h1>
     </div>
-    <form #productForm="ngForm" (ngSubmit)="onFormSubmit(productForm)">
+    <form #productForm="ngForm" (ngSubmit)="onUpdate(productForm, product)">
 
       <div class="form-group">
         <label for="id">ID</label>

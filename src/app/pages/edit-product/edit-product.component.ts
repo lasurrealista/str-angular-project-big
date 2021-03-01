@@ -24,8 +24,7 @@ export class EditProductComponent implements OnInit {
   );
   updating : boolean = false;
   Product$: Observable<Product | undefined> = of(new Product() );
-  Product: Product = new Product();
-
+  product: Product = new Product();
 
   constructor(
     private productService: ProductService,
@@ -46,16 +45,11 @@ export class EditProductComponent implements OnInit {
     this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
   }
 
-  onFormSubmit(form: NgForm): void{
-    this.productService.update(form.value);
-    console.log(form.value);
+  onUpdate(form: NgForm, product: Product): void {
 
-    this.router.navigate(['products']);
+      this.productService.update(product).subscribe(
+        () => this.router.navigate(['products'])
+      )
   }
-/*
- onFormSubmit(form: NgForm): void{
-   this.updating = true;
-    this.ProductService.update(this.Product).subscribe()
-  }
- */
+
 }

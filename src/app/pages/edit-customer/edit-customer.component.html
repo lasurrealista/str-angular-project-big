@@ -1,31 +1,31 @@
 <div class="row">
-  <div *ngIf="(customer$ | async) as event" class="col-6 offset-3">
+  <div *ngIf="(customer$ | async) as customer" class="col-6 offset-3">
     <div class="offset-4 m-5">
       <h1>Customer details</h1>
     </div>
 
-    <form #eventForm="ngForm" (ngSubmit)="onFormSubmit(eventForm)">
+    <form #customerForm="ngForm" (ngSubmit)="onUpdate(customerForm, customer)">
       <div class="form-group">
         <label for="id">ID</label>
-        <input [(ngModel)]="event.id" class="form-control" name="id" type="text" readonly>
+        <input [(ngModel)]="customer.id" class="form-control" name="id" type="text" readonly>
       </div>
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
             <label for="firstName">* firstName</label>
-            <input [(ngModel)]="event.firstName" class="form-control" name="firstName" type="text" required>
+            <input [(ngModel)]="customer.firstName" class="form-control" name="firstName" type="text" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
             <label for="lastName">* lastName</label>
-            <input [(ngModel)]="event.lastName" class="form-control" name="lastName" type="text" required>
+            <input [(ngModel)]="customer.lastName" class="form-control" name="lastName" type="text" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
             <label for="amount">* e-mail</label>
-            <input [(ngModel)]="event.email" class="form-control" name="email" type="text" required>
+            <input [(ngModel)]="customer.email" class="form-control" name="email" type="text" required>
           </div>
         </div>
       </div>
@@ -33,30 +33,30 @@
       <div class="row">
         <div class="col-md-2 form-group">
           <label for="zip">* zip</label>
-          <input [(ngModel)]="event.address.zip" class="form-control" name="zip" type="text" required>
+          <input [(ngModel)]="customer.address.zip" class="form-control" name="zip" type="text" required>
         </div>
         <div class="col-md-3 form-group">
           <label for="country">* country</label>
-          <input [(ngModel)]="event.address.country" class="form-control" name="country" type="text" required>
+          <input [(ngModel)]="customer.address.country" class="form-control" name="country" type="text" required>
         </div>
         <div class="col-md-3 form-group">
           <label for="city">* city</label>
-          <input [(ngModel)]="event.address.city" class="form-control" name="city" type="text" required>
+          <input [(ngModel)]="customer.address.city" class="form-control" name="city" type="text" required>
         </div>
         <div class="col-md-4 form-group">
           <label for="street">* street</label>
-          <input [(ngModel)]="event.address.street" class="form-control" name="street" type="text" required>
+          <input [(ngModel)]="customer.address.street" class="form-control" name="street" type="text" required>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-10 form-group">
           <label for="notes">* address notes</label>
-          <input [(ngModel)]="event.address.notes" class="form-control" name="notes" type="text" required>
+          <input [(ngModel)]="customer.address.notes" class="form-control" name="notes" type="text" required>
         </div>
         <div class="col-md-2 form-group">
           <label class="d-block" for="active">* active</label>
-          <input [(ngModel)]="event.active" name="active" type="checkbox">
+          <input [(ngModel)]="customer.active" name="active" type="checkbox">
         </div>
       </div>
       <pre>
@@ -69,7 +69,7 @@
               class="fa fa-refresh "></i></a> </button>
 
         <!-- disabled a gomb amig a form invalid -->
-        <button (click)="showHtmlToasterUpdate()" [disabled]="eventForm.invalid || updating"
+        <button (click)="showHtmlToasterUpdate()" [disabled]="customerForm.invalid || updating"
           class="btn btn-success  mt-5" type="submit">
           <i *ngIf="!updating" class="fa fa-save"></i>
           <i *ngIf="updating" class="fa fa-refresh"></i>
@@ -78,7 +78,7 @@
       <!-- teszteleshez -->
       <!--
             <pre>
-                {{event | json}}
+                {{customer | json}}
             </pre>
  -->
     </form>

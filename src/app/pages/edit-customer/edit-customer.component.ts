@@ -46,12 +46,11 @@ export class EditCustomerComponent implements OnInit {
     this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
   }
 
-  onFormSubmit(form: NgForm): void{
-    this.customerService.update(form.value);
-    console.log(form.value);
+  onUpdate(form: NgForm, customer: Customer): void {
 
-    this.router.navigate(['customers']);
-  }
-
+    this.customerService.update(customer).subscribe(
+      () => this.router.navigate(['customers'])
+    )
+}
 
 }

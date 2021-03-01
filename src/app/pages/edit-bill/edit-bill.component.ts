@@ -23,8 +23,7 @@ export class EditBillComponent implements OnInit {
   updating : boolean = false;
   Bill$: Observable<Bill | undefined> = of(new Bill() );
 
-  Bill: Bill = new Bill();
-
+  bill: Bill = new Bill();
 
   constructor(
     private billService: BillService,
@@ -45,10 +44,12 @@ export class EditBillComponent implements OnInit {
     this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
   }
 
-  onFormSubmit(form: NgForm): void{
-    this.billService.update(form.value);
-    console.log(form.value);
+  onUpdate(form: NgForm, bill: Bill): void {
 
-    this.router.navigate(['bills']);
-  }
+    this.billService.update(bill).subscribe(
+      () => this.router.navigate(['bills'])
+    )
 }
+
+}
+

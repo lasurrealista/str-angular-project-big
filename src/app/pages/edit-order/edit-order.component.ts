@@ -45,11 +45,11 @@ export class EditOrderComponent implements OnInit {
     this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
   }
 
-  onFormSubmit(form: NgForm): void{
-    this.orderService.update(form.value);
-    console.log(form.value);
+  onUpdate(form: NgForm, order: Order): void {
 
-    this.router.navigate(['orders']);
-  }
+    this.orderService.update(order).subscribe(
+      () => this.router.navigate(['orders'])
+    )
+}
 
 }

@@ -4,7 +4,7 @@
       <h1 class="h2 text-center">Bill details</h1>
     </div>
 
-    <form #billForm="ngForm" (ngSubmit)="onFormSubmit(billForm)">
+    <form #billForm="ngForm" (ngSubmit)="onUpdate(billForm, bill)">
 
       <div class="form-group">
         <label for="id">ID</label>
