@@ -20,6 +20,8 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { BillsComponent } from './pages/bills/bills.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { EditBillComponent } from './pages/edit-bill/edit-bill.component';
+import { EditCustomerComponent } from './pages/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CategoriesComponent } from './pages/categories/categories.component';
     CustomersComponent,
     BillsComponent,
     OrdersComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    EditBillComponent,
+    EditCustomerComponent
   ],
   imports: [
     BrowserModule,
