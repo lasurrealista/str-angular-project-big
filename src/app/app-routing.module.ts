@@ -54,7 +54,10 @@ const routes: Routes = [
     path: 'categories',
     component: CategoriesComponent,
   },
-
+  {
+    path: '**',
+    component: DashboardComponent,
+  }
 ];
 
 @NgModule({

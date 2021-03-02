@@ -99,8 +99,10 @@
 
       <div class="btn-group d-flex justify-content-center">
 
-        <button type="reset" class="btn btn-secondary cancelBtn ml-5"><a routerLink="/products"> <i
-              class="fa fa-refresh "></i></a></button>
+        <button [routerLink]="['/products/']" type="reset" class="btn btn-secondary cancelBtn ml-5"><span
+            class="material-icons">
+            exit_to_app
+          </span></button>
 
         <button (click)="showHtmlToasterUpdate()" [disabled]="productForm.invalid || updating"
           class="btn btn-success mr-5" type="submit">
