@@ -15,13 +15,9 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class EditBillComponent implements OnInit {
 
-  bill$: Observable<Bill> = this.activatedRoute.params.pipe(
-    switchMap( params => this.billService.get(params.id) )
-  );
-
   fields: ITableCol[] = this.configService.billsTableColumns.filter(column => column.visible);
   updating : boolean = false;
-  Bill$: Observable<Bill | undefined> = of(new Bill() );
+  bill$: Observable<Bill | undefined> = of(new Bill() );
 
   bill: Bill = new Bill();
 
@@ -36,8 +32,14 @@ export class EditBillComponent implements OnInit {
   ngOnInit(): void {
     this.billService.getAll();
     this.activatedRoute.params.subscribe(
-      params => this.Bill$ = this.billService.get(params.id)
-    )
+      params => {
+        console.log(params.id);
+        if (params.id == 0) {
+          this.bill$ = of( new Bill() );
+        } else {
+          this.bill$ = this.billService.get(params.id);
+        }
+      })
   }
 
   showHtmlToasterUpdate(){

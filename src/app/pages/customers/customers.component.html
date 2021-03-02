@@ -1,5 +1,11 @@
 <div class="container-fluid p-4">
 
+  <div class="form-group d-flex justify-content-center my-4">
+    <button [routerLink]="['/customers/0']" class="btn btn-success">Add new
+      customer</button>
+  </div>
+
+
   <div class="col-12">
     <div class="form-inline mt-4 border-0">
       <select [(ngModel)]="filterKey" class="form-control select-css">

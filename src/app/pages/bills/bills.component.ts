@@ -40,10 +40,11 @@ export class BillsComponent implements OnInit {
  onUpdate(bill: Bill): void {
 
    if (bill.id === 0) {
-     this.billService.create(bill);
+    this.billService.create(bill);
    }
-
-   this.billService.update(bill);
+   else {
+    this.billService.update(bill);
+   }
  }
 
  onDelete(bill: Bill): void {
