@@ -39,9 +39,10 @@
 
       <div class="form-group">
         <label for="status">* status</label><br>
-        <select class="form-select custom-select">
-          <option selected value="1">new</option>
-          <option value="2">paid</option>
+        <select class="form-select custom-select" name="status" id="status" [(ngModel)]="order.status"
+          pattern="^(new|paid)$" required>
+          <option value="new">new</option>
+          <option value="paid">paid</option>
         </select>
       </div>
 
