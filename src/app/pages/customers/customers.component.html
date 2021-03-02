@@ -55,11 +55,12 @@
                     </td>
                     <td>{{customer.active}} </td>
                     <td>
-                      <button [routerLink]="[customer.id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
-                    </td>
-                    <td>
-                      <button (click)="onDelete(customer)" class="btn btn-danger px-3"><i
-                          class="fa fa-trash"></i></button>
+                      <div class="btn-group">
+                        <button [routerLink]="[customer.id]" class="btn btn-info px-3"><i
+                            class="fa fa-edit"></i></button>
+                        <button (click)="onDelete(customer)" (click)="showHtmlToasterDelete()"
+                          class="btn btn-danger px-3"><i class="fa fa-trash"></i></button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
