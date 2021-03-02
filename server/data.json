@@ -7,13 +7,8 @@
       "catID": 1,
       "description": "Compatible contextually-based system engine",
       "price": 5160,
-<<<<<<< HEAD
-      "featured": true,
-      "active": false
-=======
       "featured": "true",
       "active": "false"
->>>>>>> c754806b8e3cb8be8e7812845c5e125007531def
     },
     {
       "id": 2,
@@ -10011,11 +10006,7 @@
       "id": 2001,
       "firstName": "Catherine",
       "lastName": "Missal",
-<<<<<<< HEAD
-      "email": "asdyen0@livejournal.com",
-=======
       "email": "smcfadyen0@livejournal.com",
->>>>>>> c754806b8e3cb8be8e7812845c5e125007531def
       "address": {
         "zip": 55127,
         "country": "Burundi",
@@ -10023,11 +10014,7 @@
         "street": "44, Gain Court",
         "notes": "Consequat aute occaecat proident aute Lorem ad officia ullamco duis exercitation voluptate fugiat ullamco."
       },
-<<<<<<< HEAD
-      "active": false
-=======
-      "active": "true"
->>>>>>> c754806b8e3cb8be8e7812845c5e125007531def
+      "active": "false"
     },
     {
       "id": 2002,
@@ -12120,15 +12107,12 @@
   ],
   "bill": [
     {
-<<<<<<< HEAD
-=======
       "id": 50001,
       "orderID": 100001,
       "amount": 6787,
       "status": "paid"
     },
     {
->>>>>>> c754806b8e3cb8be8e7812845c5e125007531def
       "id": 50002,
       "orderID": 100002,
       "amount": 67860,
