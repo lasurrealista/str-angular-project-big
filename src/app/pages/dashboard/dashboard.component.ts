@@ -42,21 +42,22 @@ export class DashboardComponent implements OnInit {
 
     this.combinedSubscription = combineLatest([
       this.productService.list$,
+      this.orderService.list$,
       this.customerService.list$,
       this.billService.list$,
-      this.orderService.list$,
     ]).subscribe(
       data => {
         this.cards[0].content = String(data[2].length);
         this.cards[1].content = String(data[0].length);
         this.cards[2].content = String(data[1].length);
+        this.cards[3].content = String(data[3].length);
 
         const newOrders: number =
-        data[2].filter( order => order.status === 'new').length;
+        data[1].filter( order => order.status === 'new').length;
         const shippedOrders: number =
-        data[2].filter( order => order.status === 'shipped').length;
+        data[1].filter( order => order.status === 'shipped').length;
         const paidOrders: number =
-        data[2].filter( order => order.status === 'paid').length;
+        data[1].filter( order => order.status === 'paid').length;
         this.orderChartData[0].data = [ newOrders, shippedOrders, paidOrders ]
       }
     );
