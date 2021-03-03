@@ -1821,16 +1821,6 @@
       "active": false
     },
     {
-      "id": 183,
-      "name": "Chevrolet",
-      "type": "Tahoe",
-      "catID": 2,
-      "description": "Public-key human-resource moratorium",
-      "price": 2639,
-      "featured": false,
-      "active": true
-    },
-    {
       "id": 185,
       "name": "Chrysler",
       "type": "Sebring",
@@ -12587,12 +12577,6 @@
       "status": "new"
     },
     {
-      "id": 50086,
-      "orderID": 100086,
-      "amount": 67844,
-      "status": "new"
-    },
-    {
       "id": 50087,
       "orderID": 100087,
       "amount": 6783,
@@ -13257,13 +13241,6 @@
       "customerID": 84,
       "productID": 84,
       "amount": 67384,
-      "status": "paid"
-    },
-    {
-      "id": 85,
-      "customerID": 85,
-      "productID": 85,
-      "amount": 67385,
       "status": "paid"
     },
     {
