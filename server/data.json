@@ -1831,16 +1831,6 @@
       "active": true
     },
     {
-      "id": 184,
-      "name": "Hyundai",
-      "type": "Accent",
-      "catID": 1,
-      "description": "Quality-focused methodical complexity",
-      "price": 6744,
-      "featured": true,
-      "active": false
-    },
-    {
       "id": 185,
       "name": "Chrysler",
       "type": "Sebring",
@@ -11179,20 +11169,6 @@
       "active": false
     },
     {
-      "id": 2085,
-      "firstName": "Selma",
-      "lastName": "Blair",
-      "email": "jbeldham2c@oaic.gov.au",
-      "address": {
-        "zip": 51060,
-        "country": "Yemen",
-        "city": "Vicksburg",
-        "street": "17, Pooles Lane",
-        "notes": "Reprehenderit nulla magna deserunt tempor minim consectetur labore ad ullamco consequat sunt."
-      },
-      "active": true
-    },
-    {
       "id": 2086,
       "firstName": "Nicolas",
       "lastName": "Cage",
@@ -12611,12 +12587,6 @@
       "status": "new"
     },
     {
-      "id": 50085,
-      "orderID": 100085,
-      "amount": 67832,
-      "status": "new"
-    },
-    {
       "id": 50086,
       "orderID": 100086,
       "amount": 67844,
@@ -12713,7 +12683,7 @@
       "customerID": 1,
       "productID": 1,
       "amount": 67861,
-      "status": "new"
+      "status": "shipped"
     },
     {
       "id": 21,
@@ -13140,13 +13110,6 @@
       "customerID": 62,
       "productID": 62,
       "amount": 67362,
-      "status": "paid"
-    },
-    {
-      "id": 63,
-      "customerID": 63,
-      "productID": 63,
-      "amount": 67363,
       "status": "paid"
     },
     {
