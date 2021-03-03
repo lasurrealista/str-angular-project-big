@@ -53,11 +53,11 @@ export class DashboardComponent implements OnInit {
         this.cards[3].content = String(data[3].length);
 
         const newOrders: number =
-          data[2].filter(order => order.status === 'new').length;
+          data[1].filter(order => order.status === 'new').length;
         const shippedOrders: number =
-          data[2].filter(order => order.status === 'shipped').length;
+          data[1].filter(order => order.status === 'shipped').length;
         const paidOrders: number =
-          data[2].filter(order => order.status === 'paid').length;
+          data[1].filter(order => order.status === 'paid').length;
         this.orderChartData[0].data = [newOrders, shippedOrders, paidOrders]
       }
     );
