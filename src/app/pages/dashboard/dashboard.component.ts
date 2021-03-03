@@ -42,8 +42,8 @@ export class DashboardComponent implements OnInit {
 
     this.combinedSubscription = combineLatest([
       this.productService.list$,
-      this.customerService.list$,
       this.orderService.list$,
+      this.customerService.list$,
       this.billService.list$,
       ]).subscribe(
       data => {
