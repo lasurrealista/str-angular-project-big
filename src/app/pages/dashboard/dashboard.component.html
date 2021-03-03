@@ -9,11 +9,15 @@
   <div class="col-md-4">
     <div class="card card-chart">
       <div class="card-header card-header-success">
-        <app-chart></app-chart>
-        <!--<app-chart [barChartLabels]="orderChartLabels" [barChartData]="orderChartData"></app-chart>-->
+      <app-chart
+        [barChartLabels]="orderChartLabels"
+        [barChartData]="orderChartData">
+      </app-chart>
       </div>
       <div class="card-body">
+
         <h4 class="card-title mt-2 mb-0">Orders</h4>
+
         <p class="card-category">
       </div>
       <div class="card-footer">

@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
   orderChartLabels: Label[] = ['new', 'shipped', 'paid'];
   orderChartData: ChartDataSets[] = [
     { data: [0, 0, 0], label: 'Orders' }
-  ]
+  ];
 
   constructor(
     private productService: ProductService,
