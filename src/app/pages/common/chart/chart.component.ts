@@ -12,7 +12,7 @@ export class ChartComponent implements OnInit {
   @Input() barChartLabels: Label[] = ['new', 'shipped', 'paid'];
   @Input() barChartData: ChartDataSets[] = [
     {
-      data: [56, 56, 100], label: 'Orders'
+      data: [56, 72, 100], label: 'Orders'
     },
   ];
 
