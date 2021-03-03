@@ -51,7 +51,7 @@
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let order of orders$ | async | filter: filterKey:phrase:ordersProperties | slice:pageSliceStart:pageSliceEnd | sorter:columnKey">
+                    *ngFor="let order of orders$ | async | filter: filterKey:phrase:ordersProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd">
                     <td class=" text-info">{{order.id}}</td>
                     <td>{{order.customerID}}</td>
                     <td>{{order.productID}}</td>

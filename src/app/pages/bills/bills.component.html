@@ -49,7 +49,7 @@
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let bill of bills$ | async | filter: filterKey:phrase:billsProperties | slice:pageSliceStart:pageSliceEnd | sorter:columnKey">
+                    *ngFor="let bill of bills$ | async | filter: filterKey:phrase:billsProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd">
                     <td class=" text-primary">{{bill.id}}</td>
                     <td>{{bill.orderID}}</td>
                     <td>{{bill.amount}} </td>
