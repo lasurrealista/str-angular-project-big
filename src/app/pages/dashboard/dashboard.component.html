@@ -6,60 +6,80 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4">
+
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-header card-header-warning">
+        <div class="ct-chart" id="completedTasksChart"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title mt-2 mb-0">Products</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <span class="text-warning">webshop performance #1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
     <div class="card card-chart">
       <div class="card-header card-header-success">
+        <div class="ct-chart" id="completedTasksChart"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title mt-2 mb-0">Customers</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <span class="text-success">webshop performance #2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-header card-header-danger">
       <app-chart
         [barChartLabels]="orderChartLabels"
         [barChartData]="orderChartData">
       </app-chart>
       </div>
       <div class="card-body">
-
         <h4 class="card-title mt-2 mb-0">Orders</h4>
-
-        <p class="card-category">
+        <p class="card-category"></p>
       </div>
       <div class="card-footer">
         <div>
-          <span class="text-success">webshop performance #1</span>
+          <span class="text-danger">webshop performance #3</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+
+  <div class="col-md-6">
     <div class="card card-chart">
-      <div class="card-header card-header-warning">
+      <div class="card-header card-header-info">
         <div class="ct-chart" id="websiteViewsChart"></div>
       </div>
       <div class="card-body">
-        <h4 class="card-title">Email Subscriptions</h4>
-        <p class="card-category">Last Campaign Performance</p>
+        <h4 class="card-title mt-2 mb-0">Bills</h4>
+        <p class="card-category"></p>
       </div>
       <div class="card-footer">
-        <div class="stats">
-          <i class="material-icons">access_time</i> campaign sent 2 days ago
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card card-chart">
-      <div class="card-header card-header-danger">
-        <div class="ct-chart" id="completedTasksChart"></div>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">Completed Tasks</h4>
-        <p class="card-category">Last Campaign Performance</p>
-      </div>
-      <div class="card-footer">
-        <div class="stats">
-          <i class="material-icons">access_time</i> campaign sent 2 days ago
+        <div>
+          <span class="text-info">webshop performance #4</span>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!--
 <div class="row">
   <div class="col-lg-6 col-md-12">
     <div class="card">
@@ -354,3 +374,4 @@
     </div>
   </div>
 </div>
+-->
