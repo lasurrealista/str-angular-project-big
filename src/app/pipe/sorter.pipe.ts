@@ -54,14 +54,23 @@ transform(value: any[] | null, key: string, dir: number = 1): any[] | null {
     return value;
   }
   return value.sort( (a, b) => {
+    let first = a[key];
+    let second = b[key];
+
     if (typeof a[key] === 'number' && typeof b[key] === 'number') {
       return (a[key] - b[key]) * dir;
     } else {
+
+      if (typeof first === 'object' && typeof second === 'object') {
+        first = Object.values(first).join('');
+        second = Object.values(second).join('');
+      }
+
       return (
-        ('' + a[key])
+        ('' + first)
           .toLowerCase()
           .localeCompare(
-            ('' + b[key]).toLowerCase()
+            ('' + second).toLowerCase()
           )
         ) * dir;
     }
