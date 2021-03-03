@@ -51,7 +51,7 @@
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let product of products$ | async | filter: filterKey:phrase:productsProperties | sorter:columnKey | slice:pageSliceStart:pageSliceEnd ">
+                    *ngFor="let product of products$ | async | filter: filterKey:phrase:productsProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd ">
                     <td class=" text-warning">{{product.id}}</td>
                     <td>{{product.name}}</td>
                     <td>{{product.type}}</td>
