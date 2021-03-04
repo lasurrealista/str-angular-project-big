@@ -29,6 +29,11 @@ export class DashboardComponent implements OnInit {
     { data: [0, 0, 0], label: 'Orders' }
   ];
 
+  customerChartLabels: Label[] = ['active', 'inactive'];
+  customerChartData: ChartDataSets[] = [
+    { data: [0, 0, 0], label: 'Customers' }
+  ];
+
   constructor(
     private productService: ProductService,
     private customerService: CustomerService,
@@ -48,8 +53,8 @@ export class DashboardComponent implements OnInit {
       ]).subscribe(
       data => {
         this.cards[0].content = String(data[0].length);
-        this.cards[1].content = String(data[2].length);
-        this.cards[2].content = String(data[1].length);
+        this.cards[1].content = String(data[1].length);
+        this.cards[2].content = String(data[2].length);
         this.cards[3].content = String(data[3].length);
 
         const newOrders: number =
@@ -59,6 +64,12 @@ export class DashboardComponent implements OnInit {
         const paidOrders: number =
           data[1].filter(order => order.status === 'paid').length;
         this.orderChartData[0].data = [newOrders, shippedOrders, paidOrders]
+
+        const activeCustomers: number =
+          data[2].filter(customer => customer.active === true).length;
+        const inactiveCustomers: number =
+          data[2].filter(customer => customer.active === false).length;
+        this.customerChartData[0].data = [activeCustomers, inactiveCustomers]
       }
     );
 
