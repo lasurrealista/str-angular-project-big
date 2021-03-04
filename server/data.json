@@ -13333,20 +13333,6 @@
       "productID": 98,
       "amount": 67398,
       "status": "paid"
-    },
-    {
-      "id": 2099,
-      "customerID": 99,
-      "productID": 99,
-      "amount": 67399,
-      "status": "paid"
-    },
-    {
-      "id": 2100,
-      "customerID": 100,
-      "productID": 100,
-      "amount": 673100,
-      "status": "paid"
     }
   ]
 }
