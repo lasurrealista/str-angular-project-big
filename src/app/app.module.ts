@@ -25,6 +25,7 @@ import { EditBillComponent } from './pages/edit-bill/edit-bill.component';
 import { EditCustomerComponent } from './pages/edit-customer/edit-customer.component';
 import { EditOrderComponent } from './pages/edit-order/edit-order.component';
 import { ChartComponent } from './pages/common/chart/chart.component';
+import { SumPipe } from './pipe/sum.pipe';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ChartComponent } from './pages/common/chart/chart.component';
     EditCustomerComponent,
     EditOrderComponent,
     ChartComponent,
+    SumPipe,
   ],
   imports: [
     BrowserModule,

@@ -47,10 +47,14 @@
                 <thead class="text-success">
                   <tr>
                     <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
-                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address') && sortDir === 1" class="fa fa-sort-numeric-asc"></i>
-                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address') && sortDir === -1" class="fa fa-sort-numeric-desc"></i>
-                      <i *ngIf="columnKey === col.key && (col.key === 'firstName' || col.key === 'lastName' || col.key === 'email' || col.key === 'active') && sortDir === 1" class="fa fa-sort-alpha-asc"></i>
-                      <i *ngIf="columnKey === col.key && (col.key === 'firstName' || col.key === 'lastName' || col.key === 'email' || col.key === 'active') && sortDir === -1" class="fa fa-sort-alpha-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address') && sortDir === 1"
+                        class="fa fa-sort-numeric-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address') && sortDir === -1"
+                        class="fa fa-sort-numeric-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'firstName' || col.key === 'lastName' || col.key === 'email' || col.key === 'active') && sortDir === 1"
+                        class="fa fa-sort-alpha-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'firstName' || col.key === 'lastName' || col.key === 'email' || col.key === 'active') && sortDir === -1"
+                        class="fa fa-sort-alpha-desc"></i>
                       {{ col.title }}</th>
                   </tr>
                 </thead>
@@ -61,8 +65,9 @@
                     <td>{{customer.firstName}}</td>
                     <td>{{customer.lastName}}</td>
                     <td>{{customer.email}} </td>
-                    <td>{{customer.address.zip}} {{customer.address.country}},  {{customer.address.city}} / {{customer.address.street}} 
-                       <br> <span class="font-italic">({{customer.address.notes}})</span>
+                    <td>{{customer.address.zip}} {{customer.address.country}}, {{customer.address.city}} /
+                      {{customer.address.street}}
+                      <br> <span class="font-italic">({{customer.address.notes}})</span>
                     </td>
                     <td>{{customer.active}} </td>
                     <td>
@@ -77,22 +82,39 @@
                 </tbody>
               </table>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="col-12">
-                <nav class="d-flex justify-content-center">
-                  <ul class="pagination text-center">
-                    <li class="page-item">
-                      <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a></li>
-                    <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
-                      <a (click)="onPaginate($event, btn)" class="page-link" href="#">
-                        {{ btn.page }}
-                      </a>
-                    </li>
-                    <li class="page-item">
-                      <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a></li>
-                  </ul>
-                </nav>
+          <div class="row">
+            <div class="col-12">
+              <nav class="d-flex justify-content-center">
+                <ul class="pagination text-center">
+                  <li class="page-item">
+                    <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a></li>
+                  <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                    <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+                      {{ btn.page }}
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-header-success">
+              <h4 class="card-title">Statistics</h4>
+            </div>
+            <div class="card-body">
+              <div class="text-center mb-2" *ngIf="customers$ | async; let list">
+                Number of customers: {{list.length}}
+              </div>
+              <div class="text-center mb-2">
+                Number of active customers: {{ customers$ | async | filter:'active':true | sum: 'active' }}
               </div>
             </div>
           </div>
+        </div>
