@@ -48,6 +48,8 @@ export class EditBillComponent implements OnInit {
 
   onUpdate(form: NgForm, bill: Bill): void {
 
+    this.updating = true;
+
     this.billService.update(bill).subscribe(
       () => this.router.navigate(['bills'])
     )

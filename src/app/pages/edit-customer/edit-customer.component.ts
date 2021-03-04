@@ -49,6 +49,8 @@ export class EditCustomerComponent implements OnInit {
 
   onUpdate(form: NgForm, customer: Customer): void {
 
+    this.updating = true;
+
     this.customerService.update(customer).subscribe(
       () => this.router.navigate(['customers'])
     )

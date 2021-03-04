@@ -48,6 +48,8 @@ export class EditOrderComponent implements OnInit {
 
   onUpdate(form: NgForm, order: Order): void {
 
+    this.updating = true;
+
     this.orderService.update(order).subscribe(
       () => this.router.navigate(['orders'])
     )
