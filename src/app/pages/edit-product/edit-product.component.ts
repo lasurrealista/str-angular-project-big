@@ -50,9 +50,11 @@ export class EditProductComponent implements OnInit {
 
   onUpdate(form: NgForm, product: Product): void {
 
-      this.productService.update(product).subscribe(
-        () => this.router.navigate(['products'])
-      )
+    this.updating = true;
+
+    this.productService.update(product).subscribe(
+      () => this.router.navigate(['products'])
+    )
   }
 
 }
