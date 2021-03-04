@@ -31,7 +31,17 @@ export class DashboardComponent implements OnInit {
 
   customerChartLabels: Label[] = ['active', 'inactive'];
   customerChartData: ChartDataSets[] = [
-    { data: [0, 0, 0], label: 'Customers' }
+    { data: [0, 0], label: 'Customers' }
+  ];
+
+  productChartLabels: Label[] = ['active', 'inactive'];
+  productChartData: ChartDataSets[] = [
+    { data: [0, 0], label: 'Products' }
+  ];
+
+  billChartLabels: Label[] = ['new', 'paid'];
+  billChartData: ChartDataSets[] = [
+    { data: [0, 0], label: 'Bills' }
   ];
 
   constructor(
@@ -50,7 +60,7 @@ export class DashboardComponent implements OnInit {
       this.orderService.list$,
       this.customerService.list$,
       this.billService.list$,
-      ]).subscribe(
+    ]).subscribe(
       data => {
         this.cards[0].content = String(data[0].length);
         this.cards[1].content = String(data[1].length);
@@ -70,6 +80,14 @@ export class DashboardComponent implements OnInit {
         const inactiveCustomers: number =
           data[2].filter(customer => customer.active === false).length;
         this.customerChartData[0].data = [activeCustomers, inactiveCustomers]
+
+        const activeProducts: number =
+          data[0].filter(product => product.active === true).length;
+        const inactiveProducts: number =
+          data[0].filter(product => product.active === false).length;
+        this.productChartData[0].data = [activeProducts, inactiveProducts]
+
+
       }
     );
 
