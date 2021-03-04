@@ -45,8 +45,13 @@
             <div class="card-content table-responsive">
               <table class="table mx-auto w-auto">
                 <thead class="text-warning">
-                  <tr>
-                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">{{ col.title }}</th>
+                  <tr>                    
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address' || col.key === 'catID' || col.key === 'price') && sortDir === 1" class="fa fa-sort-numeric-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address' || col.key === 'catID' || col.key === 'price') && sortDir === -1" class="fa fa-sort-numeric-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'name' || col.key === 'type' || col.key === 'description' || col.key === 'featured' || col.key === 'active') && sortDir === 1" class="fa fa-sort-alpha-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'name' || col.key === 'type' || col.key === 'description' || col.key === 'featured' || col.key === 'active') && sortDir === -1" class="fa fa-sort-alpha-desc"></i>
+                      {{ col.title }}</th>
                   </tr>
                 </thead>
                 <tbody>

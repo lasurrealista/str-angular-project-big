@@ -46,7 +46,12 @@
               <table class="table mx-auto w-auto">
                 <thead class="text-info">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">{{ col.title }}</th>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'customerID' || col.key === 'productID' || col.key === 'amount') && sortDir === 1" class="fa fa-sort-numeric-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'customerID' || col.key === 'productID' || col.key === 'amount') && sortDir === -1" class="fa fa-sort-numeric-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === 1" class="fa fa-sort-alpha-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === -1" class="fa fa-sort-alpha-desc"></i>
+                      {{ col.title }}</th>
                   </tr>
                 </thead>
                 <tbody>
