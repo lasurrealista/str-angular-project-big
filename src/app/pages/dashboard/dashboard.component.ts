@@ -16,10 +16,10 @@ import { ProductService } from 'src/app/service/product.service';
 export class DashboardComponent implements OnInit {
 
   cards: InfoCard[] = [
-    { title: 'Products', content: '102', cardClass: 'card-header-warning', footer: 'Get More Space...', icon: 'directions_car', routerLink: '/products' },
-    { title: 'Customers', content: '321', cardClass: 'card-header-success', footer: 'Last 2 Hours', icon: 'person', routerLink: '/customers' },
-    { title: 'Orders', content: '202', cardClass: 'card-header-danger', footer: 'Just Updated', icon: 'shopping_cart', routerLink: '/orders' },
-    { title: 'Bills', content: '321', cardClass: 'card-header-info', footer: 'Last 24 Hours', icon: 'receipt', routerLink: '/bills' }
+    { title: 'Products', content: '102', cardClass: 'card-header-warning', footer: 'Just Updated', icon: 'directions_car', routerLink: '/products' },
+    { title: 'Customers', content: '321', cardClass: 'card-header-success', footer: 'Registered Users', icon: 'person', routerLink: '/customers' },
+    { title: 'Orders', content: '202', cardClass: 'card-header-danger', footer: 'Active Orders', icon: 'shopping_cart', routerLink: '/orders' },
+    { title: 'Bills', content: '321', cardClass: 'card-header-info', footer: 'Open Bills', icon: 'receipt', routerLink: '/bills' }
   ]
 
   combinedSubscription: Subscription = new Subscription();
