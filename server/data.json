@@ -9988,7 +9988,7 @@
       "lastName": "Missal",
       "email": "smcfadyen0@livejournal.com",
       "address": {
-        "zip": 55127,
+        "zip": "55124",
         "country": "Burundi",
         "city": "Sterling",
         "street": "44, Gain Court",
@@ -12667,7 +12667,7 @@
       "customerID": 1,
       "productID": 1,
       "amount": 67861,
-      "status": "shipped"
+      "status": "paid"
     },
     {
       "id": 21,
