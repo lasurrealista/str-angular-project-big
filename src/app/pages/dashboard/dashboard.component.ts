@@ -24,22 +24,22 @@ export class DashboardComponent implements OnInit {
 
   combinedSubscription: Subscription = new Subscription();
 
-  orderChartLabels: Label[] = ['new', 'shipped', 'paid'];
+  orderChartLabels: Label[] = ['Number of new orders', 'Number of shipped orders', 'Number of paid orders'];
   orderChartData: ChartDataSets[] = [
     { data: [0, 0, 0], label: 'Orders' }
   ];
 
-  customerChartLabels: Label[] = ['active', 'inactive'];
+  customerChartLabels: Label[] = ['Number of active customers', 'Number of inactive customers'];
   customerChartData: ChartDataSets[] = [
     { data: [0, 0], label: 'Customers' }
   ];
 
-  productChartLabels: Label[] = ['active', 'inactive'];
+  productChartLabels: Label[] = ['Number of active products', 'Number of inactive products'];
   productChartData: ChartDataSets[] = [
     { data: [0, 0], label: 'Products' }
   ];
 
-  billChartLabels: Label[] = ['new', 'paid'];
+  billChartLabels: Label[] = ['Sum of unpaid bills', 'Sum of paid bills'];
   billChartData: ChartDataSets[] = [
     { data: [0, 0], label: 'Bills' }
   ];
