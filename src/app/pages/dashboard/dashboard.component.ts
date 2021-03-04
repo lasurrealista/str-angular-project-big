@@ -69,7 +69,6 @@ export class DashboardComponent implements OnInit {
           data[2].filter(customer => customer.active === true).length;
         const inactiveCustomers: number =
           data[2].filter(customer => customer.active === false).length;
-
         this.customerChartData[0].data = [activeCustomers, inactiveCustomers]
       }
     );
