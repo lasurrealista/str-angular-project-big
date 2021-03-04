@@ -94,16 +94,21 @@
             The address notes must be between 8 and 150 characters and must begin with a
             capital letter or a number.
           </div>
-          <div class="form-group">
-            <label for="status">* active</label><br />
-            <select class="form-select custom-select" name="active" id="active" [(ngModel)]="customer.active"
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <label for="active">active</label>
+          <br />
+          <!-- <select class="form-select custom-select" name="active" id="active" [(ngModel)]="customer.active"
               pattern="^(true|false)$" required>
               <option value="true">true</option>
               <option value="false">false</option>
-            </select>
-          </div>
+            </select> -->
+          <input type="checkbox" id="active" name="active" [(ngModel)]="customer.active">
         </div>
       </div>
+
       <pre class="text-right mt-3">
               <small>* required</small>
             </pre>
@@ -121,11 +126,10 @@
         </button>
       </div>
       <!-- teszteleshez -->
-      <!--
-            <pre>
-                {{customer | json}}
-            </pre>
- -->
+      <!-- <pre>
+        {{customer | json}}
+      </pre> -->
+
     </form>
   </div>
 </div>
