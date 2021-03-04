@@ -87,7 +87,11 @@ export class DashboardComponent implements OnInit {
           data[0].filter(product => product.active === false).length;
         this.productChartData[0].data = [activeProducts, inactiveProducts]
 
-
+        const newBills: number =
+          data[3].filter(bill => bill.status === 'new').length;
+        const paidBills: number =
+          data[3].filter(bill => bill.status === 'paid').length;
+        this.billChartData[0].data = [newBills, paidBills]
       }
     );
 
