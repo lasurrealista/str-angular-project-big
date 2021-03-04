@@ -88,9 +88,13 @@ export class DashboardComponent implements OnInit {
         this.productChartData[0].data = [activeProducts, inactiveProducts]
 
         const newBills: number =
-          data[3].filter(bill => bill.status === 'new').length;
+          data[3].filter(bill => bill.status === 'new')
+            .map(bill => bill.amount)
+            .reduce((first, second) => first + second, 0);
         const paidBills: number =
-          data[3].filter(bill => bill.status === 'paid').length;
+          data[3].filter(bill => bill.status === 'paid')
+            .map(bill => bill.amount)
+            .reduce((first, second) => first + second, 0);
         this.billChartData[0].data = [newBills, paidBills]
       }
     );
