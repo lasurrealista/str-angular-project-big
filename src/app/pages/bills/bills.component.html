@@ -45,10 +45,14 @@
                 <thead class="text-info">
                   <tr>
                     <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
-                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'orderID' || col.key === 'amount') && sortDir === 1" class="fa fa-sort-numeric-asc"></i>
-                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'orderID' || col.key === 'amount') && sortDir === -1" class="fa fa-sort-numeric-desc"></i>
-                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === 1" class="fa fa-sort-alpha-asc"></i>
-                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === -1" class="fa fa-sort-alpha-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'orderID' || col.key === 'amount') && sortDir === 1"
+                        class="fa fa-sort-numeric-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'orderID' || col.key === 'amount') && sortDir === -1"
+                        class="fa fa-sort-numeric-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === 1"
+                        class="fa fa-sort-alpha-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === -1"
+                        class="fa fa-sort-alpha-desc"></i>
                       {{ col.title }}</th>
                   </tr>
                 </thead>
@@ -57,7 +61,7 @@
                     *ngFor="let bill of bills$ | async | filter: filterKey:phrase:billsProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd">
                     <td class=" text-primary">{{bill.id}}</td>
                     <td>{{bill.orderID}}</td>
-                    <td>{{bill.amount}} </td>
+                    <td>${{bill.amount}} </td>
                     <td>{{bill.status}} </td>
                     <td>
                       <div class="btn-group">
@@ -90,3 +94,23 @@
             </nav>
           </div>
         </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Statistics</h4>
+            </div>
+            <div class="card-body">
+              <div class="text-center mb-2" *ngIf="bills$ | async; let list">
+                Number of bills: {{list.length}}
+              </div>
+              <div class="text-center mb-2">
+                Amount of unpaid bills: ${{ bills$ | async | filter:'status':'new' | sum: 'amount' }}
+              </div>
+              <div class="text-center">
+                Amount of paid bills: ${{ bills$ | async | filter:'status':'paid' | sum: 'amount' }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
