@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
     { data: [0, 0], label: 'Products' }
   ];
 
-  billChartLabels: Label[] = ['Sum of unpaid bills', 'Sum of paid bills'];
+  billChartLabels: Label[] = ['unpaid', 'paid'];
   billChartData: ChartDataSets[] = [
     { data: [0, 0], label: 'Bills' }
   ];
