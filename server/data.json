@@ -7,8 +7,8 @@
       "catID": 1,
       "description": "Compatible contextually-based system engine",
       "price": 5160,
-      "featured": "true",
-      "active": "false"
+      "featured": true,
+      "active": true
     },
     {
       "id": 2,
@@ -9988,13 +9988,13 @@
       "lastName": "Missal",
       "email": "smcfadyen0@livejournal.com",
       "address": {
-        "zip": "55124",
+        "zip": 55124,
         "country": "Burundi",
         "city": "Sterling",
         "street": "44, Gain Court",
         "notes": "Consequat aute occaecat proident aute Lorem ad officia ullamco duis exercitation voluptate fugiat ullamco."
       },
-      "active": "false"
+      "active": false
     },
     {
       "id": 2002,
