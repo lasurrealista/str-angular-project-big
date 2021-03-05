@@ -928,7 +928,7 @@
       "description": "Innovative dynamic portal",
       "price": 7564,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 94,
@@ -938,7 +938,7 @@
       "description": "Re-contextualized content-based architecture",
       "price": 7621,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 95,
@@ -958,7 +958,7 @@
       "description": "Horizontal clear-thinking neural-net",
       "price": 7396,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 97,
@@ -998,7 +998,7 @@
       "description": "Compatible well-modulated concept",
       "price": 6431,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 101,
@@ -1028,7 +1028,7 @@
       "description": "Re-contextualized grid-enabled leverage",
       "price": 3384,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 104,
@@ -1068,7 +1068,7 @@
       "description": "Front-line optimal info-mediaries",
       "price": 4044,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 108,
@@ -1088,7 +1088,7 @@
       "description": "Compatible client-driven application",
       "price": 7385,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 110,
@@ -1108,7 +1108,7 @@
       "description": "Cloned encompassing solution",
       "price": 4680,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 112,
@@ -1128,7 +1128,7 @@
       "description": "Automated directional forecast",
       "price": 2833,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 114,
@@ -1138,7 +1138,7 @@
       "description": "Public-key global concept",
       "price": 7466,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 115,
@@ -1158,7 +1158,7 @@
       "description": "Virtual content-based capacity",
       "price": 7712,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 117,
@@ -1198,7 +1198,7 @@
       "description": "Integrated client-server migration",
       "price": 3494,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 121,
@@ -1218,7 +1218,7 @@
       "description": "Re-engineered high-level migration",
       "price": 4507,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 123,
@@ -1228,7 +1228,7 @@
       "description": "Implemented static encryption",
       "price": 2711,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 124,
@@ -1238,7 +1238,7 @@
       "description": "Reverse-engineered background orchestration",
       "price": 7707,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 125,
@@ -1248,7 +1248,7 @@
       "description": "Sharable regional productivity",
       "price": 5299,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 126,
@@ -1258,7 +1258,7 @@
       "description": "Cross-group bifurcated portal",
       "price": 5111,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 127,
@@ -1268,7 +1268,7 @@
       "description": "Face to face composite toolset",
       "price": 3132,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 128,
@@ -1288,7 +1288,7 @@
       "description": "Profound mobile analyzer",
       "price": 3145,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 130,
@@ -1368,7 +1368,7 @@
       "description": "Down-sized regional utilisation",
       "price": 3664,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 138,
@@ -1378,7 +1378,7 @@
       "description": "Enhanced demand-driven software",
       "price": 7295,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 139,
@@ -1408,7 +1408,7 @@
       "description": "Monitored actuating forecast",
       "price": 4556,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 142,
@@ -1448,7 +1448,7 @@
       "description": "Fully-configurable motivating capability",
       "price": 5044,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 146,
@@ -1458,7 +1458,7 @@
       "description": "Persevering secondary workforce",
       "price": 5068,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 147,
@@ -1478,7 +1478,7 @@
       "description": "Automated executive ability",
       "price": 6595,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 149,
@@ -1488,7 +1488,7 @@
       "description": "Synchronised disintermediate throughput",
       "price": 5645,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 150,
@@ -1508,7 +1508,7 @@
       "description": "Intuitive bi-directional database",
       "price": 3307,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 152,
@@ -1518,7 +1518,7 @@
       "description": "Assimilated clear-thinking model",
       "price": 6028,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 153,
@@ -1528,7 +1528,7 @@
       "description": "Customizable leading edge system engine",
       "price": 7969,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 154,
@@ -1548,7 +1548,7 @@
       "description": "Cloned mission-critical array",
       "price": 3045,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 156,
@@ -1578,7 +1578,7 @@
       "description": "Distributed bandwidth-monitored function",
       "price": 4855,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 159,
@@ -1588,7 +1588,7 @@
       "description": "Configurable high-level architecture",
       "price": 7567,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 160,
@@ -1618,7 +1618,7 @@
       "description": "Intuitive directional initiative",
       "price": 4125,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 163,
@@ -1628,7 +1628,7 @@
       "description": "Innovative clear-thinking internet solution",
       "price": 2604,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 164,
@@ -1638,7 +1638,7 @@
       "description": "Switchable explicit capability",
       "price": 4095,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 165,
@@ -1648,7 +1648,7 @@
       "description": "Mandatory tangible circuit",
       "price": 5395,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 166,
@@ -1678,7 +1678,7 @@
       "description": "Cloned 6th generation matrix",
       "price": 6810,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 169,
@@ -1688,7 +1688,7 @@
       "description": "Versatile even-keeled middleware",
       "price": 3095,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 170,
@@ -1718,7 +1718,7 @@
       "description": "Customer-focused uniform parallelism",
       "price": 3398,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 173,
@@ -1748,7 +1748,7 @@
       "description": "Innovative coherent parallelism",
       "price": 2819,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 176,
@@ -1778,7 +1778,7 @@
       "description": "Multi-layered systemic internet solution",
       "price": 7404,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 179,
@@ -1798,7 +1798,7 @@
       "description": "Progressive systemic database",
       "price": 3460,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 181,
@@ -1808,7 +1808,7 @@
       "description": "Automated contextually-based extranet",
       "price": 6770,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 182,
@@ -1828,7 +1828,7 @@
       "description": "Profit-focused non-volatile support",
       "price": 5911,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 186,
@@ -1838,7 +1838,7 @@
       "description": "Assimilated clear-thinking capacity",
       "price": 5184,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 187,
@@ -1858,7 +1858,7 @@
       "description": "Phased upward-trending frame",
       "price": 2887,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 189,
@@ -1868,7 +1868,7 @@
       "description": "Diverse client-server productivity",
       "price": 3920,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 190,
@@ -1928,7 +1928,7 @@
       "description": "Versatile cohesive strategy",
       "price": 2532,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 196,
@@ -1958,7 +1958,7 @@
       "description": "Re-contextualized human-resource initiative",
       "price": 6786,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 199,
@@ -1968,7 +1968,7 @@
       "description": "Switchable 4th generation methodology",
       "price": 5290,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 200,
@@ -1988,7 +1988,7 @@
       "description": "Optional grid-enabled hierarchy",
       "price": 3019,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 202,
@@ -1998,7 +1998,7 @@
       "description": "Upgradable interactive interface",
       "price": 4376,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 203,
@@ -2018,7 +2018,7 @@
       "description": "Devolved multi-state open system",
       "price": 7032,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 205,
@@ -2048,7 +2048,7 @@
       "description": "Vision-oriented high-level standardization",
       "price": 7674,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 208,
@@ -2098,7 +2098,7 @@
       "description": "Visionary non-volatile secured line",
       "price": 7126,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 213,
@@ -2128,7 +2128,7 @@
       "description": "Ameliorated needs-based Graphical User Interface",
       "price": 3912,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 216,
@@ -2138,7 +2138,7 @@
       "description": "User-friendly background forecast",
       "price": 5897,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 217,
@@ -2148,7 +2148,7 @@
       "description": "Virtual fault-tolerant data-warehouse",
       "price": 7692,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 218,
@@ -2168,7 +2168,7 @@
       "description": "Reverse-engineered foreground hardware",
       "price": 3374,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 220,
@@ -2188,7 +2188,7 @@
       "description": "Cross-group 3rd generation function",
       "price": 6100,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 222,
@@ -2198,7 +2198,7 @@
       "description": "Proactive client-server moratorium",
       "price": 5820,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 223,
@@ -2208,7 +2208,7 @@
       "description": "Multi-tiered fault-tolerant neural-net",
       "price": 4833,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 224,
