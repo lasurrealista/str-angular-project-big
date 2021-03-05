@@ -16,10 +16,10 @@ import { ProductService } from 'src/app/service/product.service';
 export class DashboardComponent implements OnInit {
 
   cards: InfoCard[] = [
-    { title: 'Products', content: '102', cardClass: 'card-header-warning', footer: 'Selection of Products', footericon: 'commute', icon: 'directions_car', routerLink: '/products' },
-    { title: 'Customers', content: '321', cardClass: 'card-header-success', footer: 'Registered Users', footericon: 'arrow_circle_up', icon: 'person', routerLink: '/customers' },
-    { title: 'Orders', content: '202', cardClass: 'card-header-danger', footer: 'Active Orders', footericon: 'assessment', icon: 'shopping_cart', routerLink: '/orders' },
-    { title: 'Bills', content: '321', cardClass: 'card-header-info', footer: 'Open Bills', footericon: 'euro_symbol',  icon: 'receipt', routerLink: '/bills' }
+    { title: 'Products', content: '102', cardClass: 'card-header-warning', footer: 'Active Products', footericon: 'commute', icon: 'directions_car', routerLink: '/products' },
+    { title: 'Customers', content: '321', cardClass: 'card-header-success', footer: 'Active Users', footericon: 'arrow_circle_up', icon: 'person', routerLink: '/customers' },
+    { title: 'Orders', content: '202', cardClass: 'card-header-danger', footer: 'Number of Unpaid Orders', footericon: 'assessment', icon: 'shopping_cart', routerLink: '/orders' },
+    { title: 'Bills', content: '321', cardClass: 'card-header-info', footer: 'Sum of Unpaid Bills', footericon: 'euro_symbol',  icon: 'receipt', routerLink: '/bills' }
   ]
 
   combinedSubscription: Subscription = new Subscription();
@@ -62,10 +62,12 @@ export class DashboardComponent implements OnInit {
       this.billService.list$,
     ]).subscribe(
       data => {
-        this.cards[0].content = String(data[0].length);
-        this.cards[1].content = String(data[2].length);
-        this.cards[2].content = String(data[1].length);
-        this.cards[3].content = String(data[3].length);
+        this.cards[0].content = String(data[0].filter(product => product.active === true).length);
+        this.cards[1].content = String(data[2].filter(customer => customer.active === true).length);
+        this.cards[2].content = String(data[1].filter(order => order.status === 'new').length);
+        this.cards[3].content = String('$' + data[3].filter(bill => bill.status === 'new')
+          .map(bill => bill.amount)
+          .reduce((first, second) => first + second, 0));
 
         const newOrders: number =
           data[1].filter(order => order.status === 'new').length;
