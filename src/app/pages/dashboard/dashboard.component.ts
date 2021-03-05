@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit {
         this.cards[2].content = String(data[1].filter(order => order.status === 'new').length);
         this.cards[3].content = String('$' + data[3].filter(bill => bill.status === 'new')
           .map(bill => bill.amount)
-          .reduce((first, second) => first + second, 0));
+          .reduce((first, second) => first + second, 0).toLocaleString("en-US"));
 
         const newOrders: number =
           data[1].filter(order => order.status === 'new').length;
