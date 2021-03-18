@@ -1,7 +1,7 @@
 <div class="container-fluid p-4">
 
   <div class="form-group d-flex justify-content-center my-4">
-    <button (click)="onUpdate(order)" [routerLink]="'orders/0'" class="btn btn-success">Add new
+    <button [routerLink]="['/orders/0']" class="btn btn-success">Add new
       order</button>
   </div>
 
@@ -46,16 +46,25 @@
               <table class="table mx-auto w-auto">
                 <thead class="text-info">
                   <tr>
-                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">{{ col.title }}</th>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'customerID' || col.key === 'productID' || col.key === 'amount') && sortDir === 1"
+                        class="fa fa-sort-numeric-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'customerID' || col.key === 'productID' || col.key === 'amount') && sortDir === -1"
+                        class="fa fa-sort-numeric-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === 1"
+                        class="fa fa-sort-alpha-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === -1"
+                        class="fa fa-sort-alpha-desc"></i>
+                      {{ col.title }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let order of orders$ | async | filter: filterKey:phrase:ordersProperties | slice:pageSliceStart:pageSliceEnd | sorter:columnKey">
+                    *ngFor="let order of orders$ | async | filter: filterKey:phrase:ordersProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd">
                     <td class=" text-info">{{order.id}}</td>
                     <td>{{order.customerID}}</td>
                     <td>{{order.productID}}</td>
-                    <td>{{order.amount}}</td>
+                    <td>${{order.amount}}</td>
                     <td>{{order.status}}</td>
                     <td>
                       <div class="btn-group">
@@ -86,5 +95,27 @@
                   <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a></li>
               </ul>
             </nav>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Statistics</h4>
+            </div>
+            <div class="card-body">
+              <div class="text-center mb-2" *ngIf="orders$ | async; let list">
+                Number of orders: {{list.length}}
+              </div>
+              <div class="text-center mb-2">
+                Amount of unpaid orders: ${{ orders$ | async | filter:'status':'new' | sum: 'amount' }}
+              </div>
+              <div class="text-center mb-2">
+                Amount of paid orders: ${{ orders$ | async | filter:'status':'paid' | sum: 'amount' }}
+              </div>
+              <div class="text-center">
+                Amount of shipped orders: ${{ orders$ | async | filter:'status':'shipped' | sum: 'amount' }}
+              </div>
+            </div>
           </div>
         </div>

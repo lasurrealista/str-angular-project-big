@@ -75,20 +75,27 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="status">* featured</label><br>
-        <select class="form-select custom-select">
-          <option selected value="1">true</option>
-          <option value="2">false</option>
-        </select>
-      </div>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="featured">* featured</label><br>
+          <!-- <select class="form-select custom-select" name="featured" id="featured" [(ngModel)]="product.featured"
+            pattern="^(true|false)$" required>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select> -->
+          <input type="checkbox" id="featured" name="featured" [(ngModel)]="product.featured">
+        </div>
 
-      <div class="form-group">
-        <label for="status">* active</label><br>
-        <select class="form-select custom-select">
-          <option selected value="1">true</option>
-          <option value="2">false</option>
-        </select>
+
+        <div class="col-md-6 form-group">
+          <label for="active">* active</label><br>
+          <!-- <select class="form-select custom-select" name="active" id="active" [(ngModel)]="product.active"
+          pattern="^(true|false)$" required>
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select> -->
+          <input type="checkbox" id="active" name="active" [(ngModel)]="product.active">
+        </div>
       </div>
 
       <pre class="text-right mt-3">
@@ -97,8 +104,10 @@
 
       <div class="btn-group d-flex justify-content-center">
 
-        <button type="reset" class="btn btn-secondary cancelBtn ml-5"><a routerLink="/products"> <i
-              class="fa fa-refresh "></i></a></button>
+        <button [routerLink]="['/products/']" type="reset" class="btn btn-secondary cancelBtn ml-5"><span
+            class="material-icons">
+            exit_to_app
+          </span></button>
 
         <button (click)="showHtmlToasterUpdate()" [disabled]="productForm.invalid || updating"
           class="btn btn-success mr-5" type="submit">

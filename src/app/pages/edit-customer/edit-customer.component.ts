@@ -15,16 +15,11 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class EditCustomerComponent implements OnInit {
 
-  customer$: Observable<Customer> = this.activatedRoute.params.pipe(
-    switchMap( params => this.customerService.get(params.id) )
-  );
-
   fields: ITableCol[] = this.configService.customersTableColumns.filter(column => column.visible);
   updating : boolean = false;
-  Customer$: Observable<Customer | undefined> = of(new Customer() );
+  customer$: Observable<Customer | undefined> = of(new Customer() );
 
-  Customer: Customer = new Customer();
-
+  customer: Customer = new Customer();
 
   constructor(
     private customerService: CustomerService,
@@ -38,8 +33,14 @@ export class EditCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.customerService.getAll();
     this.activatedRoute.params.subscribe(
-      params => this.Customer$ = this.customerService.get(params.IDorName)
-    )
+      params => {
+        console.log(params.id);
+        if (params.id == 0) {
+          this.customer$ = of( new Customer() );
+        } else {
+          this.customer$ = this.customerService.get(params.id);
+        }
+      })
   }
 
   showHtmlToasterUpdate(){
@@ -47,6 +48,8 @@ export class EditCustomerComponent implements OnInit {
   }
 
   onUpdate(form: NgForm, customer: Customer): void {
+
+    this.updating = true;
 
     this.customerService.update(customer).subscribe(
       () => this.router.navigate(['customers'])

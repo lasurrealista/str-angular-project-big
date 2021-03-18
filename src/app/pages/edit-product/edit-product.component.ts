@@ -15,15 +15,11 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class EditProductComponent implements OnInit {
 
-  product$: Observable<Product> = this.activatedRoute.params.pipe(
-    switchMap( params => this.productService.get(params.id) )
-  );
-
   fields: ITableCol[] = this.configService.productsTableColumns.filter(
     column => column.visible
   );
   updating : boolean = false;
-  Product$: Observable<Product | undefined> = of(new Product() );
+  product$: Observable<Product | undefined> = of(new Product() );
   product: Product = new Product();
 
   constructor(
@@ -37,9 +33,16 @@ export class EditProductComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAll();
     this.activatedRoute.params.subscribe(
-      params => this.Product$ = this.productService.get(params.IDorName)
-    )
+      params => {
+        console.log(params.id);
+        if (params.id == 0) {
+          this.product$ = of( new Product() );
+        } else {
+          this.product$ = this.productService.get(params.id);
+        }
+      })
   }
+
 
   showHtmlToasterUpdate(){
     this.notifyService.showHTMLMessage(`Updating was successful.`, ``, 3000)
@@ -47,9 +50,11 @@ export class EditProductComponent implements OnInit {
 
   onUpdate(form: NgForm, product: Product): void {
 
-      this.productService.update(product).subscribe(
-        () => this.router.navigate(['products'])
-      )
+    this.updating = true;
+
+    this.productService.update(product).subscribe(
+      () => this.router.navigate(['products'])
+    )
   }
 
 }

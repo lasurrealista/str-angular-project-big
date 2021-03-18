@@ -8,13 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
+import { ChartsModule } from 'ng2-charts';
+
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './pages/common/sidebar/sidebar.component';
 import { NavbarComponent } from './pages/common/navbar/navbar.component';
 import { InfoCardComponent } from './pages/common/info-card/info-card.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
-
 import { FormsModule } from '@angular/forms';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { BillsComponent } from './pages/bills/bills.component';
@@ -23,6 +24,8 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { EditBillComponent } from './pages/edit-bill/edit-bill.component';
 import { EditCustomerComponent } from './pages/edit-customer/edit-customer.component';
 import { EditOrderComponent } from './pages/edit-order/edit-order.component';
+import { ChartComponent } from './pages/common/chart/chart.component';
+import { SumPipe } from './pipe/sum.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { EditOrderComponent } from './pages/edit-order/edit-order.component';
     CategoriesComponent,
     EditBillComponent,
     EditCustomerComponent,
-    EditOrderComponent
+    EditOrderComponent,
+    ChartComponent,
+    SumPipe,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { EditOrderComponent } from './pages/edit-order/edit-order.component';
 	  ToastrModule.forRoot(),
     FormsModule,
     HttpClientModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

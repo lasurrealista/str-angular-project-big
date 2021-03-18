@@ -15,16 +15,11 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class EditOrderComponent implements OnInit {
 
-  order$: Observable<Order> = this.activatedRoute.params.pipe(
-    switchMap( params => this.orderService.get(params.id) )
-  );
-
   fields: ITableCol[] = this.configService.ordersTableColumns.filter(column => column.visible);
   updating : boolean = false;
-  Order$: Observable<Order | undefined> = of(new Order() );
+  order$: Observable<Order | undefined> = of(new Order() );
 
-  Order: Order = new Order();
-
+  order: Order = new Order();
 
   constructor(
     private orderService: OrderService,
@@ -37,8 +32,14 @@ export class EditOrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getAll();
     this.activatedRoute.params.subscribe(
-      params => this.Order$ = this.orderService.get(params.id)
-    )
+      params => {
+        console.log(params.id);
+        if (params.id == 0) {
+          this.order$ = of( new Order() );
+        } else {
+          this.order$ = this.orderService.get(params.id);
+        }
+      })
   }
 
   showHtmlToasterUpdate(){
@@ -46,6 +47,8 @@ export class EditOrderComponent implements OnInit {
   }
 
   onUpdate(form: NgForm, order: Order): void {
+
+    this.updating = true;
 
     this.orderService.update(order).subscribe(
       () => this.router.navigate(['orders'])

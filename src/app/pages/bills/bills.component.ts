@@ -40,10 +40,11 @@ export class BillsComponent implements OnInit {
  onUpdate(bill: Bill): void {
 
    if (bill.id === 0) {
-     this.billService.create(bill);
+    this.billService.create(bill);
    }
-
-   this.billService.update(bill);
+   else {
+    this.billService.update(bill);
+   }
  }
 
  onDelete(bill: Bill): void {
@@ -97,8 +98,10 @@ export class BillsComponent implements OnInit {
  }
 
  columnKey: string = '';
+ sortDir: number = -1;
 
  onColumnSelect(key: string): void {
    this.columnKey = key;
+   this.sortDir = this.sortDir * (-1);
  }
 }

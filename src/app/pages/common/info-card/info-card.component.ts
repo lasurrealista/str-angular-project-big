@@ -6,6 +6,7 @@ cardClass:string
 title:string
 content:string
 footer:string
+footericon: string
 routerLink:string}
 
 @Component({
@@ -19,6 +20,7 @@ export class InfoCardComponent implements OnInit {
   @Input() title:string="title"
   @Input() content:string=""
   @Input() footer:string=""
+  @Input() footericon:string=""
   @Input() routerLink:string=""
 
 
